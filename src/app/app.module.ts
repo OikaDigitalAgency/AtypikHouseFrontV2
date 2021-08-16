@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormContactComponent } from './components/form-contact/form-contact.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchComponent } from './components/search/search.component';
+import { TableauDeBordComponent } from './components/tableau-de-bord/tableau-de-bord.component';
 
 
 
@@ -16,6 +17,7 @@ import { SearchComponent } from './components/search/search.component';
     FooterComponent,
     FormContactComponent,
     SearchComponent,
+    TableauDeBordComponent,
   ],
   imports: [
     BrowserModule,
