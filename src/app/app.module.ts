@@ -2,23 +2,26 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { NavComponent } from './nav/nav.component';
-import { ContentContactPageComponent } from './content-contact-page/content-contact-page.component';
-import { BodyContentComponent } from './body-content/body-content.component';
-import { FicheHouseDetailComponent } from './fiche-house-detail/fiche-house-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './components/footer/footer.component';
+import { FormContactComponent } from './components/form-contact/form-contact.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SearchComponent } from './components/search/search.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    NavComponent,
-    ContentContactPageComponent,
-    BodyContentComponent,
-    FicheHouseDetailComponent,
+    FooterComponent,
+    FormContactComponent,
+    SearchComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
