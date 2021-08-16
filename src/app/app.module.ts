@@ -8,7 +8,11 @@ import { FormContactComponent } from './components/form-contact/form-contact.com
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchComponent } from './components/search/search.component';
 
-
+import { BodyContentComponent } from './components/body-content/body-content.component';
+import { ContentContactPageComponent } from './components/content-contact-page/content-contact-page.component';
+import { FicheHouseDetailComponent } from './components/fiche-house-detail/fiche-house-detail.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +20,11 @@ import { SearchComponent } from './components/search/search.component';
     FooterComponent,
     FormContactComponent,
     SearchComponent,
+    HeaderComponent,
+    NavComponent,
+    ContentContactPageComponent,
+    BodyContentComponent,
+    FicheHouseDetailComponent,
   ],
   imports: [
     BrowserModule,
