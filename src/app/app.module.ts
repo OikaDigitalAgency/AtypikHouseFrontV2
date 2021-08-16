@@ -9,7 +9,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchComponent } from './components/search/search.component';
 import { TableauDeBordComponent } from './components/tableau-de-bord/tableau-de-bord.component';
 
-
+import { BodyContentComponent } from './components/body-content/body-content.component';
+import { ContentContactPageComponent } from './components/content-contact-page/content-contact-page.component';
+import { FicheHouseDetailComponent } from './components/fiche-house-detail/fiche-house-detail.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +22,11 @@ import { TableauDeBordComponent } from './components/tableau-de-bord/tableau-de-
     FormContactComponent,
     SearchComponent,
     TableauDeBordComponent,
+    HeaderComponent,
+    NavComponent,
+    ContentContactPageComponent,
+    BodyContentComponent,
+    FicheHouseDetailComponent,
   ],
   imports: [
     BrowserModule,
