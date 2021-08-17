@@ -14,6 +14,10 @@ import { ContentContactPageComponent } from './components/content-contact-page/c
 import { FicheHouseDetailComponent } from './components/fiche-house-detail/fiche-house-detail.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -27,12 +31,14 @@ import { NavComponent } from './components/nav/nav.component';
     ContentContactPageComponent,
     BodyContentComponent,
     FicheHouseDetailComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

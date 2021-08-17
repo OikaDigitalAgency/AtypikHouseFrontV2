@@ -1,14 +1,23 @@
-        <nav role="navigation">
-          <div id="menuToggle">
-            <input type="checkbox" />
-              <span></span>
-              <span></span>
-              <span></span>
-          <ul id="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Info</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-         </div>
-        </nav>
+<div class="header">
+  <div class="offset">
+    <nav class ="navbar navbar-expand-sm bg-dark navbar-dark" id="navbar">
+        <!--Brand-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <!--Links-->
+        <ul class="navbar-nav">
+        <!--Dropdown-->
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><span class="navbar-toggler-icon"></span></a>
+            <div class="dropdown-content">
+              <li><a class="dropdown-item" routerLink="login">Login</a></li>
+              <li><a class="dropdown-item" routerLink="register">Register</a></li>
+            </div>
+          </li>
+        </ul>
+      </nav>
+  </div>
+</div>
