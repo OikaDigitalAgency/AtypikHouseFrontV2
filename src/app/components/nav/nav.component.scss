@@ -77,6 +77,10 @@ label {
     opacity: 0;
     transition: .25s 0s ease-in-out;
   }
+
+  li::marker{
+    color: #FFF;
+  }
   
   a {
     
