@@ -17,6 +17,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PubComponent } from './components/pub/pub.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AppRoutingModule } from './app-routing.module';
     FicheHouseDetailComponent,
     LoginComponent,
     RegisterComponent,
+    PubComponent,
   ],
   imports: [
     BrowserModule,
