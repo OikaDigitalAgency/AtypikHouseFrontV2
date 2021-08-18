@@ -40,7 +40,8 @@ import { PubComponent } from './components/pub/pub.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
