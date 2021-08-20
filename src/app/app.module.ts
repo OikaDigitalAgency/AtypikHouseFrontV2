@@ -18,6 +18,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PubComponent } from './components/pub/pub.component';
+import { DevenirProprietaireComponent } from './devenir-proprietaire/devenir-proprietaire.component';
+import { CguComponent } from './cgu/cgu.component';
+import { HomeComponent } from './home/home.component';
+import { ConditionsGeneralesComponent } from './components/conditions-generales/conditions-generales.component';
 
 
 @NgModule({
@@ -35,6 +39,10 @@ import { PubComponent } from './components/pub/pub.component';
     LoginComponent,
     RegisterComponent,
     PubComponent,
+    DevenirProprietaireComponent,
+    CguComponent,
+    HomeComponent,
+    ConditionsGeneralesComponent,
   ],
   imports: [
     BrowserModule,
