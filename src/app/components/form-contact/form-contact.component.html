@@ -1,21 +1,39 @@
+
 <div class="container-form">
     <h3>Nous Contacter</h3>
-    <form action="post" class="form">
+    <form action="post" class="form" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
-            <label for="name" class="name">Nom:</label>
-            <input matInput>
+            <label for="name" class="name">Nom:*</label>
+            <input matInput type="text" class="form-contact" id="name" required
+             name="name"
+             [(ngModel)]="model.name" #name="ngModel">
+             <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                 Nom requis
+            </div>
         </mat-form-field><br>
         <mat-form-field appearance="fill">
-            <label for="firstname" class="firstname">Prénom:</label>
-            <input matInput>
+            <label for="firstname" class="firstname">Prénom:*</label>
+            <input matInput type="text" class="form-contact" id="firstname" required
+             name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel">
+             <div [hidden]="firstname.valid || firstname.pristine" class="alert alert-danger">
+                Prénom requis
+            </div>    
         </mat-form-field><br>
         <mat-form-field appearance="fill">
-            <label for="email" class="email">Email:</label>
-            <input matInput placeholder="pat@example.com" >
+            <label for="email" class="email">Email:*</label>
+            <input matInput placeholder="pat@example.com" type="email" class="form-contact" id="email" required
+             name="email" [(ngModel)]="model.email" #email="ngModel">
+             <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                Email requis
+            </div> 
         </mat-form-field><br>
         <mat-form-field appearance="fill">
-            <label for="message" class="message">Votre message:</label>
-            <textarea matInput  rows="5" cols="40"></textarea>
+            <label for="message" class="message">Votre message:*</label>
+            <textarea matInput  rows="5" cols="40" type="text" class="form-contact" id="message" required
+             name="message" [(ngModel)]="model.message" #message="ngModel"></textarea>
+             <div [hidden]="message.valid || message.pristine" class="alert alert-danger">
+                Message requis
+            </div>
         </mat-form-field><br>
         <button mat-button class="button">ENVOYER</button>
     </form>
