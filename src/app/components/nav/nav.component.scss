@@ -5,18 +5,18 @@
   position: absolute;
   top: 50px;
   right: 50px;
-  
   z-index: 1; 
   -webkit-user-select: none;
   user-select: none;
 }
 
 /*menu*/
+
 #menu{
-  position: fixed;
+  position:absolute;
   background: #118041;
   list-style-type: none;
-  width: 15%;
+  width: 300px;
 
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;

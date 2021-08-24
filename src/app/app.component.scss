@@ -1,5 +1,13 @@
-app-content-contact-page{
-    float:left;
-    display: inline-block;
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin : 0;
 }
 
+
+.footer{
+    min-height:50px; 
+    margin-top: auto;   
+}
