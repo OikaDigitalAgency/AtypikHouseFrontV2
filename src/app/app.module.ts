@@ -22,7 +22,7 @@ import { PubComponent } from './components/pub/pub.component';
 import { DevenirProprietaireComponent } from './devenir-proprietaire/devenir-proprietaire.component';
 import { CguComponent } from './cgu/cgu.component';
 import { HomeComponent } from './home/home.component';
-import { ConditionsGeneralesComponent } from './components/conditions-generales/conditions-generales.component';
+import { PageContactComponent } from './page-contact/page-contact.component';
 
 
 @NgModule({
@@ -43,7 +43,7 @@ import { ConditionsGeneralesComponent } from './components/conditions-generales/
     DevenirProprietaireComponent,
     CguComponent,
     HomeComponent,
-    ConditionsGeneralesComponent,
+    PageContactComponent,
   ],
   imports: [
     BrowserModule,

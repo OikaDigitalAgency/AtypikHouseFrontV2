@@ -1,7 +1,8 @@
 
 <div class="container-form">
-    <h3>Nous Contacter</h3>
-    <form action="post" class="form" (ngSubmit)="onSubmit()">
+    <div [hidden]="submitted">
+        <h3>Nous Contacter</h3>
+    <form action="post" class="form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
         <mat-form-field appearance="fill">
             <label for="name" class="name">Nom:*</label>
             <input matInput type="text" class="form-contact" id="name" required
@@ -35,6 +36,11 @@
                 Message requis
             </div>
         </mat-form-field><br>
-        <button mat-button class="button">ENVOYER</button>
+        <button mat-button class="button" [disabled]="!contactForm.form.valid">ENVOYER</button>
     </form>
+    </div>
+    <div [hidden]="!submitted">
+        <h2>test réussi:</h2>
+        <button class="btn btn-primary" (click)="submitted=false">retour</button>
+    </div>
 </div>

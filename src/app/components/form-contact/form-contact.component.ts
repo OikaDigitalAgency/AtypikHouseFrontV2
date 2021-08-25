@@ -18,6 +18,10 @@ export class FormContactComponent implements OnInit {
   submitted = false;
 
   onSubmit() { this.submitted = true; }
+
+  newUser() {
+    this.model = new User(42, '', '','','');
+  }
  
 
   constructor() { }

@@ -1,39 +1,13 @@
-<!----NAV----
-<label>
-  <input type="checkbox">
-  <span class="menu">
-    <span class="hamburger"></span>
-  </span>
-  <ul>
-    <li>
-      <a href="#">Home</a>
-    </li>
-    <li>
-      <a href="#">Login</a>
-    </li>
-    <li>
-      <a href="#">Register</a>
-    </li>
-    <li>
-      <a href="#">Devenir hote</a>
+<div class="container-nav">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+      <button class="button" type="button">X</button>
+      <div class="dropdown-content">
+        <li><a class="dropdown-item" routerLink="/home">Home</a></li>
+        <li><a class="dropdown-item" href="/login">login</a></li>
+        <li><a class="dropdown-item" href="/register">Register</a></li>
+      </div>
     </li>
   </ul>
-</label>
-----END Of NAV-->
-
-<nav role='navigation'>
-  <div class="container-menu" id="menuToggle">
-    <input class="button" type="checkbox" />
-    <span></span>
-    <span></span>
-    <span></span>
-    <ul id="menu">
-      <li><a routerLink="/home">Home</a></li>
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Register</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
+</div>
 
