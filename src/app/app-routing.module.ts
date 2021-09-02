@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
