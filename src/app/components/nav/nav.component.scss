@@ -13,8 +13,9 @@
   border: none;
   cursor: pointer;
   background-color: transparent;
-  color: #3e8e41;
-  font-size: 30px;
+  color: #118041;
+  font-size: 50px;
+  margin-top: 15px;
 }
 
 .dropdown {
@@ -28,10 +29,12 @@
   display: none;
   right: 0;
   position: absolute;
-  background: #3e8e41;
-  min-width: 160px;
+  background: #118041;
+  min-width: 220px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  margin-top: 4px;
+  margin-right: -1.5px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -48,11 +51,6 @@
 }
 
 .dropdown-content a:hover{
-  background: #3e8e41;
+  background: #118041;
   color:#a1d72e;
 }
-
-
-
-
-
