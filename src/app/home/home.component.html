@@ -1,1 +1,89 @@
-<p>hello world</p>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Home</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+
+	<!-- stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="home.component.scss" />
+</head>
+
+<!-- Body content -->
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+						<div class="booking-bg">
+							<img height= "300px" width= "300px" src="/assets/img/Logo2.png/" alt="atypikhouse-logo" style="margin-top: 100px;">
+						</div>
+						<form>
+							<div class="form-header">
+								<h2>Réservez-maintenant</h2>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Date d'arrivée</span>
+										<input class="form-control" type="date" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Date de départ</span>
+										<input class="form-control" type="date" required>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Adultes</span>
+										<select class="form-control">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+                                            <option>4</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Enfants</span>
+										<select class="form-control">
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+											<option>6</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<span class="form-label">E-mail</span>
+								<input class="form-control" type="email" placeholder="Entrez votre email">
+							</div>
+							<div class="form-group">
+								<span class="form-label">Téléphone</span>
+								<input class="form-control" type="tel" placeholder="Entrez votre numero de téléphone">
+							</div>
+							<div class="form-btn">
+								<button class="submit-btn">Voir les disponibilités</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

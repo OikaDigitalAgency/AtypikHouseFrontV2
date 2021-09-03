@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
