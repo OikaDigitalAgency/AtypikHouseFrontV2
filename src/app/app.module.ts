@@ -31,7 +31,6 @@ import { PageContactComponent } from './page-contact/page-contact.component';
     FooterComponent,
     FormContactComponent,
     SearchComponent,
-    TableauDeBordComponent,
     HeaderComponent,
     NavComponent,
     ContentContactPageComponent,
