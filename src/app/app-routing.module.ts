@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CguComponent } from './cgu/cgu.component';
+import { CguComponent } from './pages/cgu/cgu.component';
 
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './home/home.component';
-import { PageContactComponent } from './page-contact/page-contact.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PageContactComponent } from './pages/page-contact/page-contact.component';
 import { PageRegisterComponent } from './pages/page-register/page-register.component';
 
 const routes: Routes = [
