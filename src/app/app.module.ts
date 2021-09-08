@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormContactComponent } from './components/form-contact/form-contact.component';
+
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 import { SearchComponent } from './components/search/search.component';
-import { TableauDeBordComponent } from './components/tableau-de-bord/tableau-de-bord.component';
 
 import { BodyContentComponent } from './components/body-content/body-content.component';
 import { ContentContactPageComponent } from './components/content-contact-page/content-contact-page.component';
@@ -49,10 +51,11 @@ import { PageContactComponent } from './page-contact/page-contact.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     AppRoutingModule,
-    FormsModule
-    
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
