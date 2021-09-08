@@ -7,6 +7,7 @@
 	<mat-form-field class="example-full-width" appearance="outline">
 		<mat-label>Nom</mat-label>
 		<input matInput formControlName='firstName'>
+		<!-- Pour le nom des "hasErrors", ils correspondent au noms des fonctions de validation -->
 		<mat-error *ngIf="form.get('firstName')?.hasError('required')">Nom Requis</mat-error>
 		<mat-error *ngIf="form.get('firstName')?.hasError('minlength')">Le nom doit contenir plus de 2 caractères</mat-error>
 		<mat-error *ngIf="form.get('firstName')?.hasError('pattern')">Le nom doit contenir que des lettres</mat-error>
