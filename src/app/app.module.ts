@@ -21,10 +21,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PubComponent } from './components/pub/pub.component';
-import { DevenirProprietaireComponent } from './devenir-proprietaire/devenir-proprietaire.component';
-import { CguComponent } from './cgu/cgu.component';
-import { HomeComponent } from './home/home.component';
-import { PageContactComponent } from './page-contact/page-contact.component';
+import { DevenirProprietaireComponent } from './pages/devenir-proprietaire/devenir-proprietaire.component';
+import { CguComponent } from './pages/cgu/cgu.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PageContactComponent } from './pages/page-contact/page-contact.component';
 import { PageRegisterComponent } from './pages/page-register/page-register.component';
 
 @NgModule({
