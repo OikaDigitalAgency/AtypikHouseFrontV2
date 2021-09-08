@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+//import { ValidatePassword } from 'src/app/must-match/validate-password';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,8 +11,6 @@ export class RegisterComponent implements OnInit {
   form!: FormGroup;
 
   
-
-
   constructor(private fb: FormBuilder){}
 
   
@@ -28,6 +28,9 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required]], 
       confirmPassword: ['', [Validators.required]],
     });
+    /*{
+      validator: ValidatePassword.MatchPassword // your validation method
+    }*/
   }
 
 // Pour que le bouton soit actif quand le formulaire est remplis, sinon non actif 
@@ -39,6 +42,8 @@ export class RegisterComponent implements OnInit {
 
 
   // Custom Validator pour customPassword ... 
+
+  
 
  
 }
