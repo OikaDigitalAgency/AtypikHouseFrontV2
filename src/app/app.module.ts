@@ -25,6 +25,7 @@ import { DevenirProprietaireComponent } from './devenir-proprietaire/devenir-pro
 import { CguComponent } from './cgu/cgu.component';
 import { HomeComponent } from './home/home.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
+import { PageRegisterComponent } from './pages/page-register/page-register.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { PageContactComponent } from './page-contact/page-contact.component';
     CguComponent,
     HomeComponent,
     PageContactComponent,
+    PageRegisterComponent,
   ],
   imports: [
     BrowserModule,
