@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,6 +47,7 @@ import { PageRegisterComponent } from './pages/page-register/page-register.compo
     HomeComponent,
     PageContactComponent,
     PageRegisterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { PageRegisterComponent } from './pages/page-register/page-register.compo
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]
