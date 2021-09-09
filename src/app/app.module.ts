@@ -27,6 +27,8 @@ import { CguComponent } from './pages/cgu/cgu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PageContactComponent } from './pages/page-contact/page-contact.component';
 import { PageRegisterComponent } from './pages/page-register/page-register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCheckboxModule }  from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,6 @@ import { PageRegisterComponent } from './pages/page-register/page-register.compo
     HomeComponent,
     PageContactComponent,
     PageRegisterComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -57,7 +58,8 @@ import { PageRegisterComponent } from './pages/page-register/page-register.compo
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]

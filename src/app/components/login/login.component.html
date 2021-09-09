@@ -11,9 +11,11 @@
 		<mat-error *ngIf="form.get('password')?.hasError('required')">Mot de passe Requis</mat-error>
 		<mat-error *ngIf="form.get('password')?.hasError('minlength')">Le mot de passe doit contenir au moins 8 caractères</mat-error>
 	</mat-form-field>
-	<div class="button-row">
-		<button class="login-button">Se connecter</button>
-	</div>
+	<section class="register-full-width">
+		<div class="container-button">
+		  <button mat-raised-button type="button" class="button" (click)="onSave(form.value)" [disabled]="!form.valid">Se Connecter</button>	  
+		</div>
+	</section>
 	<div class="text">
 		<p>Pas encore inscrit ? <a routerLink="/register">Inscrivez-vous</a></p>
 	</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ILogin } from 'src/app/models/login';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +12,24 @@ export class LoginComponent implements OnInit {
 
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private readonly fb: FormBuilder, private readonly authService: AuthService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(255)]],
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(255)]],
     });
   }
+
+  onSave(formValues: ILogin) {
+    // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
+    if(this.form.valid) {
+      this.authService.login(formValues).subscribe((tokenValue) => {
+        console.log(tokenValue.token);
+        const token = `Bearer ${tokenValue.token}`;
+        sessionStorage.setItem('token', token);
+      }, (error) => {console.log(error)} );
+    } 
+  }
+
 }
