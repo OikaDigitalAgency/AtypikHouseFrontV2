@@ -59,7 +59,7 @@
     </div>
   </div>
 </div> --->
-<div></div>
+<div class="contact-page">
   <app-content-contact-page></app-content-contact-page>
   <form class="contact-form" [formGroup]="form">
     <mat-form-field class="contact-full-width" appearance="outline">
@@ -83,7 +83,7 @@
     </mat-form-field>
     <mat-form-field class="contact-full-width" appearance="outline">
       <mat-label>Message</mat-label>
-      <input matInput formControlName='message'>
+      <textarea matInput  formControlName='message'></textarea>
       <mat-error *ngIf="form.get('message')?.hasError('required')">Message Requis</mat-error>
       <mat-error *ngIf="form.get('message')?.hasError('minlength')">Le message doit contenir plus de 1 caractères</mat-error>
       <mat-error *ngIf="form.get('message')?.hasError('maxlength')">Le message peut contenir 255 caractères maxmimum</mat-error>
@@ -92,3 +92,4 @@
       <button class="Send-button">Envoyer</button>
     </div>
   </form>
+</div>
