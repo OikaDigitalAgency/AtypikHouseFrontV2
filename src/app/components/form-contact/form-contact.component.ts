@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { User } from 'src/app/user';
 
@@ -11,27 +12,20 @@ import { User } from 'src/app/user';
 
 export class FormContactComponent implements OnInit {
   
-  /*Données fictif dans le formulaire */
-  model = new User(1, 'vilcoque', 'quentin' , 'test@gmail.com', 'voici mon message');
-
- 
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
-  newUser() {
-    this.model = new User(42, '', '','','');
-  }
+  form!: FormGroup;
  
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-z\s+a-z+ÖØ-öø-ÿ]+$/i)]],
+      lastName: ['', [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-z\s+a-z+ÖØ-öø-ÿ]+$/i)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(255)]],
+    });
+
+
   }
 
-  
-
 }
-
-
-
