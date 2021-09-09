@@ -53,13 +53,13 @@
 
 	<mat-form-field class="register-full-width" appearance="outline">
 		<mat-label>Mot de passe</mat-label>
-		<input matInput formControlName='password'>
+		<input matInput formControlName='password' type="password">
 		<mat-error *ngIf="form.get('password')?.hasError('required')">Mot de passe Requis</mat-error>
 	</mat-form-field>
 
 	<mat-form-field class="register-full-width" appearance="outline">
 		<mat-label>Confirmer mot de passe</mat-label>
-		<input matInput formControlName='confirmPassword'>
+		<input matInput formControlName='confirmPassword' type="password">
 		<mat-error *ngIf="form.get('confirmPassword')?.hasError('required')">Vous devez confirmer votre mot de passe</mat-error>
 	</mat-form-field>
 
