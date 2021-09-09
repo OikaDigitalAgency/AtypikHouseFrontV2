@@ -1,24 +1,29 @@
-
-.content {
-    padding: 7rem 0; 
+.contact-page{
+    margin: auto 0% auto 0%;
 }
-  
-.form-control {
+
+form, app-content-contact-page{
+    width: 400px;
+    height: 500px;
+    margin: 5% 0% 5% 15%;
+    display: inline-block;
+}
+
+.contact-full-width{
+    display: block;
+    margin : auto;
+}
+
+button{
+
     border: none;
-    border: 1px solid #d9d9d9;
-    border-radius: 0; 
+    color: white;
+    background-color: #118041;
+    width: 120px;
+    min-height: 50px;
 }
 
-.form-control:active, .form-control:focus {
-      outline: none;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      border-color: #000; 
-}
-  
-.col-form-label {
-    color: #000; }
-  
-button.btn.btn-primary.rounded-0.py-2.px-4{
-      background-color: #118041;
+button:hover {
+  cursor: pointer;
+  background-color: rgb(23, 156, 63);
 }
