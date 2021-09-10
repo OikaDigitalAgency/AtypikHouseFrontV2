@@ -1,7 +1,7 @@
 export interface IRegisterActivitesType {
-    title: string;
-  }
+  title: string;
+}
 
 export interface IActivitesTypesEntity {
-    title: string;
+  title: string;
 }
