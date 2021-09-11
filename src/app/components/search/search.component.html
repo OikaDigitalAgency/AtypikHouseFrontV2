@@ -1,68 +1,55 @@
-<div id="booking" class="section">
-    <div class="section-center">
-        <div class="container">
-            <div class="row">
-                <div class="booking-form">
-                    <div class="booking-bg">
-                        <img height= "300px" width= "300px" src="/assets/img/Logo2.png/" alt="atypikhouse-logo" style="margin-top: 100px;">
-                    </div>
-                    <form>
-                        <div class="form-header">
-                            <h2>Réservez-maintenant</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <span class="form-label">Date d'arrivée</span>
-                                    <input class="form-control" type="date" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <span class="form-label">Date de départ</span>
-                                    <input class="form-control" type="date" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <span class="form-label">Adultes</span>
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                    <span class="select-arrow"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <span class="form-label">Enfants</span>
-                                    <select class="form-control">
-                                        <option>0</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                        <option>6</option>
-                                    </select>
-                                    <span class="select-arrow"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <span class="form-label">Adresse de destionation</span>
-                            <input class="form-control" type="adress" placeholder="Ville, Pays...">
-                        </div>
-                        <div class="form-btn">
-                            <button mat-raised-button type="button" class="submit-btn">Voir les disponibilités </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<section>
+    <mat-form-field color="accent" appearance="outline">
+        <mat-label>Date d'arrivée</mat-label>
+        <input matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field color="accent" appearance="outline">
+        <mat-label>Date de départ</mat-label>
+        <input matInput [matDatepicker]="picker2">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+    </mat-form-field>
+</section>
+
+<section>
+  <mat-form-field appearance="outline">
+    <mat-label>Adultes</mat-label>
+    <mat-select>
+        <mat-option value="un">1</mat-option>
+        <mat-option value="deux">2</mat-option>
+        <mat-option value="trois">3</mat-option>
+        <mat-option value="quatre">4</mat-option>
+        <mat-option value="cinq">5</mat-option>
+        <mat-option value="six">6</mat-option>
+        <mat-option value="sept">7</mat-option>
+        <mat-option value="huit">8</mat-option>
+        <mat-option value="neuf">9</mat-option>
+        <mat-option value="dix">10</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Enfants</mat-label>
+    <mat-select>
+        <mat-option value="zero">0</mat-option>
+        <mat-option value="un">1</mat-option>
+        <mat-option value="deux">2</mat-option>
+        <mat-option value="trois">3</mat-option>
+        <mat-option value="quatre">4</mat-option>
+        <mat-option value="cinq">5</mat-option>
+        <mat-option value="six">6</mat-option>
+        <mat-option value="sept">7</mat-option>
+        <mat-option value="huit">8</mat-option>
+        <mat-option value="neuf">9</mat-option>
+        <mat-option value="dix">10</mat-option>
+    </mat-select>
+  </mat-form-field>
+</section>
+
+<section>
+  <mat-form-field appearance="outline">
+    <mat-label>Destination... ?</mat-label>
+    <input matInput>
+  </mat-form-field>
+</section>

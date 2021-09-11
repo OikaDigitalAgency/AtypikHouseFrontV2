@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AbstractControl } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +11,7 @@ import { FormContactComponent } from './components/form-contact/form-contact.com
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 import { SearchComponent } from './components/search/search.component';
 
@@ -29,6 +31,8 @@ import { PageContactComponent } from './pages/page-contact/page-contact.componen
 import { PageRegisterComponent } from './pages/page-register/page-register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule }  from '@angular/material/checkbox';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -59,9 +63,13 @@ import { MatCheckboxModule }  from '@angular/material/checkbox';
     ReactiveFormsModule,
     MatInputModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [FormBuilder],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
