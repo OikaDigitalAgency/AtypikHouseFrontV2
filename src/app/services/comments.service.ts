@@ -29,8 +29,8 @@ export class CommentsService {
       comment: registerValues.comment,
       rating: registerValues.rating,
       date: registerValues.date,
-      idBooking: registerValues.idBooking,
-      idUser: registerValues.idUser,
+      idBooking: `\/api\/bookings\/${registerValues.idBooking}`,
+      idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
     return this.http.post(`${AUTH_API}/api/comments`, body, httpOptions);
@@ -45,8 +45,8 @@ export class CommentsService {
       comment: registerValues.comment,
       rating: registerValues.rating,
       date: registerValues.date,
-      idBooking: `\/api\/bookings\/${registerValues.idBooking}`, // ? 
-      idUser: registerValues.idUser,
+      idBooking: `\/api\/bookings\/${registerValues.idBooking}`, 
+      idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
     return this.http.put(`${AUTH_API}/api/comments`, body, httpOptions);

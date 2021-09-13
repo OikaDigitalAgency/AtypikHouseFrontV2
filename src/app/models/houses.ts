@@ -10,6 +10,8 @@ export interface IRegisterHouses {
     tax: number;
     listeActivities: string;
     listidPics: string;
+    dateDebut: string,
+    dateFin: string,
     idCategory: string;
     idUser: string;
   }
@@ -26,6 +28,8 @@ export interface IHousesEntity {
     tax: number;
     listeActivities: string;
     listidPics: string;
+    dateDebut: string,
+    dateFin: string,
     idCategory: string;
     idUser: string;
 }

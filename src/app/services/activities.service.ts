@@ -29,7 +29,7 @@ export class ActivitiesService {
       description: registerValues.description,
       locationlat: registerValues.locationlat,
       locationlng: registerValues.locationlng,
-      idType: registerValues.idType,
+      idType: `\/api\/activities\/${registerValues.idType}`,
    };
 
    return this.http.post(`${AUTH_API}/api/activities_types`, body, httpOptions);
@@ -45,7 +45,7 @@ export class ActivitiesService {
       description: registerValues.description,
       locationlat: registerValues.locationlat,
       locationlng: registerValues.locationlng,
-      idType: registerValues.idType,
+      idType: `\/api\/activities\/${registerValues.idType}`,
      };
  
      return this.http.put(`${AUTH_API}/api/activities_types`, body, httpOptions);
