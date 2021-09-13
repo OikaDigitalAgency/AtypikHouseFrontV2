@@ -31,7 +31,7 @@ export class PostsService {
         content: registerValues.content, 
         publishDate: registerValues.publishDate,
         published: registerValues.published,
-        idHouse: registerValues.idHouse,
+        idHouse: `\/api\/houses\/${registerValues.idHouse}`,
         author: registerValues.author,
     };
 
@@ -48,7 +48,7 @@ export class PostsService {
         content: registerValues.content, 
         publishDate: registerValues.publishDate,
         published: registerValues.published,
-        idHouse: registerValues.idHouse,
+        idHouse: `\/api\/houses\/${registerValues.idHouse}`,
         author: registerValues.author,
       };
   

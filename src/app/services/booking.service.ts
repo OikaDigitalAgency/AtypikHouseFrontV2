@@ -29,8 +29,8 @@ export class BookingService {
      nbpersons: registerValues.nbpersons,
      datestart: registerValues.datestart,
      dateend: registerValues.dateend,
-     idHouse: registerValues.idHouse,
-     idUser: registerValues.idUser,
+     idHouse: `\/api\/houses\/${registerValues.idHouse}`,
+     idUser: `\/api\/users\/${registerValues.idUser}`,
    };
 
    return this.http.post(`${AUTH_API}/api/bookings`, body, httpOptions);
@@ -46,8 +46,8 @@ export class BookingService {
       nbpersons: registerValues.nbpersons,
       datestart: registerValues.datestart,
       dateend: registerValues.dateend,
-      idHouse: registerValues.idHouse,
-      idUser: registerValues.idUser, 
+      idHouse: `\/api\/houses\/${registerValues.idHouse}`,
+      idUser: `\/api\/users\/${registerValues.idUser}`, 
      };
  
      return this.http.put(`${AUTH_API}/api/bookings`, body, httpOptions);

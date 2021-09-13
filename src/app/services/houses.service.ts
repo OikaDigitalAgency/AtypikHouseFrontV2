@@ -36,8 +36,10 @@ export class HousesService {
       tax: registerValues.tax,
       listeActivities: registerValues.listeActivities,
       listidPics: registerValues.listidPics,
-      idCategory: registerValues.idCategory,
-      idUser: registerValues.idUser,
+      dateDebut: registerValues.dateDebut,
+      dateFin: registerValues.dateFin,
+      idCategory: `\/api\/categories\/${registerValues.idCategory}`,
+      idUser: `\/api\/users\/${registerValues.idUser}`,
    };
 
    return this.http.post(`${AUTH_API}/api/houses`, body, httpOptions);
@@ -60,8 +62,10 @@ export class HousesService {
       tax: registerValues.tax,
       listeActivities: registerValues.listeActivities,
       listidPics: registerValues.listidPics,
-      idCategory: registerValues.idCategory,
-      idUser: registerValues.idUser, 
+      dateDebut: registerValues.dateDebut,
+      dateFin: registerValues.dateFin,
+      idCategory: `\/api\/categories\/${registerValues.idCategory}`,
+      idUser: `\/api\/users\/${registerValues.idUser}`,
      };
  
      return this.http.put(`${AUTH_API}/api/houses`, body, httpOptions);
