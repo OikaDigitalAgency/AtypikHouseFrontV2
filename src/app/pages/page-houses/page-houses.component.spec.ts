@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FicheHouseDetailComponent } from './fiche-house-detail.component';
+import { PageHousesComponent } from './page-houses.component';
 
-describe('FicheHouseDetailComponent', () => {
-  let component: FicheHouseDetailComponent;
-  let fixture: ComponentFixture<FicheHouseDetailComponent>;
+describe('PageHousesComponent', () => {
+  let component: PageHousesComponent;
+  let fixture: ComponentFixture<PageHousesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FicheHouseDetailComponent ]
+      declarations: [ PageHousesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FicheHouseDetailComponent);
+    fixture = TestBed.createComponent(PageHousesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
