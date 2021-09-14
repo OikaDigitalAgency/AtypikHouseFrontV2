@@ -33,6 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule }  from '@angular/material/checkbox';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HebergementListingComponent } from './pages/hebergement-listing/hebergement-listing.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     HomeComponent,
     PageContactComponent,
     PageRegisterComponent,
+    HebergementListingComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +69,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    MatGridListModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

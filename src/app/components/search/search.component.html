@@ -1,55 +1,57 @@
-<section>
-    <mat-form-field color="accent" appearance="outline">
-        <mat-label>Date d'arrivée</mat-label>
-        <input matInput [matDatepicker]="picker1">
-        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-        <mat-datepicker #picker1></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field color="accent" appearance="outline">
-        <mat-label>Date de départ</mat-label>
-        <input matInput [matDatepicker]="picker2">
-        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-        <mat-datepicker #picker2 color="primary"></mat-datepicker>
-    </mat-form-field>
-</section>
+<form class="search-form">
+  <section>
+      <mat-form-field color="accent" appearance="outline">
+          <mat-label>Date d'arrivée</mat-label>
+          <input matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field color="accent" appearance="outline">
+          <mat-label>Date de départ</mat-label>
+          <input matInput [matDatepicker]="picker2">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+      </mat-form-field>
+  </section>
 
-<section>
-  <mat-form-field appearance="outline">
-    <mat-label>Adultes</mat-label>
-    <mat-select>
-        <mat-option value="un">1</mat-option>
-        <mat-option value="deux">2</mat-option>
-        <mat-option value="trois">3</mat-option>
-        <mat-option value="quatre">4</mat-option>
-        <mat-option value="cinq">5</mat-option>
-        <mat-option value="six">6</mat-option>
-        <mat-option value="sept">7</mat-option>
-        <mat-option value="huit">8</mat-option>
-        <mat-option value="neuf">9</mat-option>
-        <mat-option value="dix">10</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Enfants</mat-label>
-    <mat-select>
-        <mat-option value="zero">0</mat-option>
-        <mat-option value="un">1</mat-option>
-        <mat-option value="deux">2</mat-option>
-        <mat-option value="trois">3</mat-option>
-        <mat-option value="quatre">4</mat-option>
-        <mat-option value="cinq">5</mat-option>
-        <mat-option value="six">6</mat-option>
-        <mat-option value="sept">7</mat-option>
-        <mat-option value="huit">8</mat-option>
-        <mat-option value="neuf">9</mat-option>
-        <mat-option value="dix">10</mat-option>
-    </mat-select>
-  </mat-form-field>
-</section>
+  <section>
+    <mat-form-field appearance="outline">
+      <mat-label>Adultes</mat-label>
+      <mat-select>
+          <mat-option value="un">1</mat-option>
+          <mat-option value="deux">2</mat-option>
+          <mat-option value="trois">3</mat-option>
+          <mat-option value="quatre">4</mat-option>
+          <mat-option value="cinq">5</mat-option>
+          <mat-option value="six">6</mat-option>
+          <mat-option value="sept">7</mat-option>
+          <mat-option value="huit">8</mat-option>
+          <mat-option value="neuf">9</mat-option>
+          <mat-option value="dix">10</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enfants</mat-label>
+      <mat-select>
+          <mat-option value="zero">0</mat-option>
+          <mat-option value="un">1</mat-option>
+          <mat-option value="deux">2</mat-option>
+          <mat-option value="trois">3</mat-option>
+          <mat-option value="quatre">4</mat-option>
+          <mat-option value="cinq">5</mat-option>
+          <mat-option value="six">6</mat-option>
+          <mat-option value="sept">7</mat-option>
+          <mat-option value="huit">8</mat-option>
+          <mat-option value="neuf">9</mat-option>
+          <mat-option value="dix">10</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </section>
 
-<section>
-  <mat-form-field appearance="outline">
-    <mat-label>Destination... ?</mat-label>
-    <input matInput>
-  </mat-form-field>
-</section>
+  <section>
+    <mat-form-field appearance="outline">
+      <mat-label>Ville</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </section>
+</form>
