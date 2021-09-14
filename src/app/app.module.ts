@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AbstractControl } from '@angular/forms';
-import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,11 +10,10 @@ import { FormContactComponent } from './components/form-contact/form-contact.com
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 
 import { SearchComponent } from './components/search/search.component';
 
-import { BodyContentComponent } from './components/body-content/body-content.component';
 import { ContentContactPageComponent } from './components/content-contact-page/content-contact-page.component';
 import { FicheHouseDetailComponent } from './components/fiche-house-detail/fiche-house-detail.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -30,7 +28,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageContactComponent } from './pages/page-contact/page-contact.component';
 import { PageRegisterComponent } from './pages/page-register/page-register.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatCheckboxModule }  from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HebergementListingComponent } from './pages/hebergement-listing/hebergement-listing.component';
@@ -45,7 +43,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HeaderComponent,
     NavComponent,
     ContentContactPageComponent,
-    BodyContentComponent,
     FicheHouseDetailComponent,
     LoginComponent,
     RegisterComponent,

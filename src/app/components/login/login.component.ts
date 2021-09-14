@@ -23,13 +23,12 @@ export class LoginComponent implements OnInit {
 
   onSave(formValues: ILogin) {
     // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
-    if(this.form.valid) {
+    if (this.form.valid) {
       this.authService.login(formValues).subscribe((tokenValue) => {
-        console.log(tokenValue.token);
         const token = `Bearer ${tokenValue.token}`;
         sessionStorage.setItem('token', token);
-      }, (error) => {console.log(error)} );
-    } 
+      }, (error) => { console.log(error) });
+    }
   }
 
 }
