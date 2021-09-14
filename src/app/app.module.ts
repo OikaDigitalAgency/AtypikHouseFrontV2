@@ -15,7 +15,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { SearchComponent } from './components/search/search.component';
 
 import { ContentContactPageComponent } from './components/content-contact-page/content-contact-page.component';
-import { FicheHouseDetailComponent } from './components/fiche-house-detail/fiche-house-detail.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
@@ -31,8 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
-import { HebergementListingComponent } from './pages/hebergement-listing/hebergement-listing.component';
+import { HebergementListingComponent } from './components/hebergement-listing/hebergement-listing.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { PageHousesComponent } from './pages/page-houses/page-houses.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HeaderComponent,
     NavComponent,
     ContentContactPageComponent,
-    FicheHouseDetailComponent,
     LoginComponent,
     RegisterComponent,
     PubComponent,
@@ -53,6 +52,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     PageContactComponent,
     PageRegisterComponent,
     HebergementListingComponent,
+    PageHousesComponent,
   ],
   imports: [
     BrowserModule,
