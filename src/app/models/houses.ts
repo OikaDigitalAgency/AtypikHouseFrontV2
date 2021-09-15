@@ -32,4 +32,8 @@ export interface IHousesEntity {
     dateFin: string,
     idCategory: string;
     idUser: string;
+
 }
+
+
+
