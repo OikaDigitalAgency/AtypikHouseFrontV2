@@ -2,6 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IRegisterHouses, IHousesEntity } from '../models/houses';
+import { catchError, map, tap } from 'rxjs/operators';
+import { of } from 'rxjs'; // RxJS 6, à utiliser.
+
+
 
 const AUTH_API = 'http://localhost:8000';
 
@@ -17,6 +21,22 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class HousesService {
+
+  private houseUrl = 'api/home';  // URL to web api
+
+  private log(log: string){
+    console.info(log);
+  }
+
+  private handleError<T>(operation= 'operation', result?: T){
+    return (error: any): Observable<T> => {
+      console.log(error);
+      console.log(`${operation} failed: ${error.message}`);
+
+      return of(result as T);
+    };
+  }
+
 
   constructor(private readonly http: HttpClient) { }
 
@@ -79,6 +99,16 @@ export class HousesService {
     return this.http.get(`${AUTH_API}/api/houses`, httpOptions);
   }
 
+
+/*recupere la liste des houses fictif*/ 
+  getHouses(): Observable<IHousesEntity[]> {
+    return this.http.get<IHousesEntity[]>(this.houseUrl)
+      .pipe(
+        tap(_ => this.log('fetched houses')),
+        catchError(this.handleError<IHousesEntity[]>('getHouses', []))
+      );
+  }
+
   /**
    * Permet de rechercher les appartements selon leur ville,
    * leur disponibilité, et leur nombre de lits.
@@ -97,4 +127,6 @@ export class HousesService {
   deleteAllHouses(): Observable<any> {
     return this.http.delete(`${AUTH_API}/api/houses`, httpOptions);
   }
+
+  
 }

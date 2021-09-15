@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HousesService } from 'src/app/services/houses.service';
 import { Router } from '@angular/router';
+import { IHousesEntity } from 'src/app/models/houses';
+import { HOUSE } from 'src/app/donnees/mock-houses';
 
 
 @Component({
@@ -11,15 +13,15 @@ import { Router } from '@angular/router';
 
 })
 export class HebergementListingComponent implements OnInit {
-  houses: any[];
+  house: IHousesEntity[];
 
   constructor(private readonly HousesService: HousesService, private readonly router: Router){
-    this.houses = [];
+    this.house = [];
   }
 
   /*appelle la requete*/ 
   ngOnInit(): void {
-    this.HousesService.getAllHouses().subscribe(houses => this.houses = houses)
+    this.HousesService.getHouses().subscribe(house => this.house = house)
   }
 
 }

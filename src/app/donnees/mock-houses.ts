@@ -1,8 +1,7 @@
-import { IRegisterHouses } from "../models/houses";
-
+import { IHousesEntity } from "../models/houses";
 /*donnée fictif de house */
   
-export const HOUSE: any[] = [
+export const HOUSE: IHousesEntity[] = [
     {
     title: "typi",
     description: "jolie typi",
