@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IRegister, IUserEntity } from '../models/register';
 import { ILogin, ILoginEntity } from '../models/login';
+import { ISearch, ISearchEntity } from '../models/search';
 
 const AUTH_API = 'http://localhost:8000';
 
@@ -46,5 +47,16 @@ export class AuthService {
     };
 
     return this.http.post(`${AUTH_API}/register`, body, httpOptions);
+  }
+
+  search(searchValues: ISearch): Observable<any> {
+    const body: ISearchEntity = {
+      dateArrivée: searchValues.dateFrom,
+      dateDépart: searchValues.dateTo,
+      nombreAdultes: searchValues.nbPerson,
+      nombreEnfants: searchValues.nbChildren,
+      ville: searchValues.city,
+    };
+    return this.http.post(`${AUTH_API}/api/search`, body, httpOptions);
   }
 }

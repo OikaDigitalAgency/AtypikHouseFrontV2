@@ -1,19 +1,20 @@
 <form class="search-form" [formGroup]="form">
-  <img class="login-form-img" src="/assets/img/Logo2.png" alt="Logo atypikhouse" height= "200px" width= "200px">
-
+  <img class="search-form-img" src="/assets/img/Logo2.png" alt="Logo atypikhouse" height= "200px" width= "200px">
+  <h3>Réservez-maintenant votre AtypikHouse</h3>
   <section>
       <mat-form-field color="accent" appearance="outline">
           <mat-label>Date d'arrivée</mat-label>
-          <input matInput formControlName='dateFrom' [matDatepicker]="picker1">
+          <input matInput formControlName='dateFrom' useValueAsDate [matDatepicker]="picker1">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1 color="primary"></mat-datepicker>
       </mat-form-field>
       <mat-form-field color="accent" appearance="outline">
           <mat-label>Date de départ</mat-label>
-          <input matInput formControlName='dateTo' [matDatepicker]="picker2">
+          <input matInput formControlName='dateTo' useValueAsDate [matDatepicker]="picker2">
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2 color="primary"></mat-datepicker>
       </mat-form-field>
+      <label class="erreur" *ngIf="form.errors">{{ form.errors?.dates | json }} </label>
   </section>
 
   <section>
@@ -21,7 +22,7 @@
       <mat-label>Adultes</mat-label>
       <input matInput type="number" formControlName='nbPerson'>
     </mat-form-field>
-    <mat-form-field class="person-field" appearance="outline">
+    <mat-form-field class="person-field"  appearance="outline">
       <mat-label>Enfants</mat-label>
       <input matInput type="number" formControlName='nbChildren'>
     </mat-form-field>
@@ -30,12 +31,12 @@
   <section>
     <mat-form-field class="city-field" appearance="outline">
       <mat-label>Ville</mat-label>
-      <input matInput type="text">
+      <input matInput type="text" formControlName='city'>
     </mat-form-field>
   </section>
 
   <section>
-		  <button mat-raised-button type="button">Rechercher</button>
+		  <button mat-raised-button type="button" (click)="onSave(form.value)" [disabled]="!form.valid">Rechercher</button>
 	</section>
 
 </form>

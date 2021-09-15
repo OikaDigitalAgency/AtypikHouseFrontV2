@@ -11,9 +11,12 @@ img{
 	margin: auto auto auto 33%;
 }
 
+h3{
+	text-align: center;
+}
 
 mat-form-field {
-	margin: 3%
+	margin: auto auto auto 6%;
 }
 
 
@@ -36,6 +39,11 @@ button:hover {
 }
 
 .city-field{
-	width: max-content;
+	min-width: 525px;
+}
+
+.erreur{
+	color: red;
+	margin-left: 90px;
 }
 
