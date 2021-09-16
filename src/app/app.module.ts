@@ -11,6 +11,11 @@ import { FormContactComponent } from './components/form-contact/form-contact.com
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+
+
+
 
 import { SearchComponent } from './components/search/search.component';
 
@@ -67,7 +72,10 @@ import { PageHousesComponent } from './pages/page-houses/page-houses.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule,
+    MatListModule
+  
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

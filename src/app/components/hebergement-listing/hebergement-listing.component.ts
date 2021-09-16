@@ -1,12 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HousesService } from 'src/app/services/houses.service';
 import { IHousesEntity } from 'src/app/models/houses';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+
 
 @Component({
   selector: 'app-hebergement-listing',
   templateUrl: './hebergement-listing.component.html',
   styleUrls: ['./hebergement-listing.component.scss'],
   providers: [HousesService]
+  
 
 })
 export class HebergementListingComponent implements OnInit {
