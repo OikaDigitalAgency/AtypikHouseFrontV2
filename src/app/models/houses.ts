@@ -8,8 +8,8 @@ export interface IRegisterHouses {
     nbbeds: number;
     price: number;
     tax: number;
-    listeActivities: string;
-    listidPics: string;
+    listeActivities: Array<string>;
+    listidPics: Array<string>;
     dateDebut: string,
     dateFin: string,
     idCategory: string;
@@ -26,8 +26,8 @@ export interface IHousesEntity {
     nbbeds: number;
     price: number;
     tax: number;
-    listeActivities: string;
-    listidPics: string;
+    listeActivities: Array<string>;
+    listidPics: Array<string>;
     dateDebut: string,
     dateFin: string,
     idCategory: string;
