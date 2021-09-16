@@ -4,7 +4,7 @@ import { IHousesEntity } from "../models/houses";
 export const HOUSE: IHousesEntity[] = [
     {
         title: "Tipi",
-        description: "jolie Tipi 00000000000000000000000000000 1111111111111111 ",
+        description: "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
         address: "44 rue de paris",
         zipecode: 75017,
         city: "paris",

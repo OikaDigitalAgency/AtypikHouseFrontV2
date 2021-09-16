@@ -1,27 +1,21 @@
-<mat-card class="container-card">
-	<mat-card-header class="header-card">
-	  <mat-card-title>{{house.title}}</mat-card-title>
-	</mat-card-header>
-	<br>
-	<mat-card-content class="content-house">
-		<div>
-			<img mat-card-image clas="img-house" src="{{house.listidPics}}" alt="" width="100" height="100">
-		</div>
-			<p class="paragraph-house">
-				Description: 
-				{{house.description}} 
-				Addresse: 
-				{{house.address}} 
-				Code postale: 
-				{{house.zipecode}}
-				Ville:
-				{{house.city}}
-				Nombre de lit:
-				{{house.nbbeds}}
-				Prix:
-				{{house.price}}
-				Activité:
-				{{house.listeActivities}}
-			</p>
-	</mat-card-content>
-  </mat-card>
+<div class="container-card-house" >
+	<mat-card class="card-house"  >
+		<mat-card-header class="card-header-house">
+			<mat-card-title>{{house.title}}</mat-card-title>
+		</mat-card-header>
+		<img mat-card-image class="img-house" src="{{house.listidPics}}" alt="" mat-card-avatar>
+	  <mat-card-content>
+		<p>
+		  {{house.description}}
+		</p>
+		<mat-list role="list" class="list-house">
+			<mat-list-item role="listitem">Adresse: {{house.address}}</mat-list-item>
+		  	<mat-list-item role="listitem">Code postal: {{house.zipecode}}</mat-list-item>
+		  	<mat-list-item role="listitem">Ville: {{house.city}}</mat-list-item>
+		  	<mat-list-item role="listitem">Nombre de lit: {{house.nbbeds}}</mat-list-item>
+		  	<mat-list-item role="listitem">Prix: {{house.price}}</mat-list-item>
+		  	<mat-list-item role="listitem">Activité: {{house.listeActivities}}</mat-list-item>
+		</mat-list>	
+	  </mat-card-content>
+	</mat-card>
+  </div>
