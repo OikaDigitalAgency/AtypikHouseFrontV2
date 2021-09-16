@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HOUSE } from 'src/app/donnees/mock-houses';
+import { IHousesEntity } from 'src/app/models/houses';
+import { HousesService } from 'src/app/services/houses.service';
 
 @Component({
   selector: 'app-page-houses',
@@ -6,10 +10,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page-houses.component.scss']
 })
 export class PageHousesComponent implements OnInit {
+  params!: any;
 
-  constructor() { }
+  constructor(private readonly route: ActivatedRoute, private readonly housesService: HousesService) {
+    this.route.params.subscribe(params => {
+      this.params = params;
+    });
+  }
+
+  houses!: IHousesEntity[];
 
   ngOnInit(): void {
+    this.houses = HOUSE;
+    // this.housesService.searchHouses(this.params.city, this.params.dateFin, this.params.nbbeds).subscribe((houses: IHousesEntity[]) => this.houses = houses);
+    // requête ici
   }
+
 
 }

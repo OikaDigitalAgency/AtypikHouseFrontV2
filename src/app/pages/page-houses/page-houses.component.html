@@ -1,1 +1,7 @@
-<app-hebergement-listing class="hebergement-listing"></app-hebergement-listing>
+<section>
+    <mat-grid-list cols="3" rowHeight="2:1">
+        <mat-grid-tile *ngFor='let house of houses'>
+            <app-hebergement-listing class="hebergement-listing" [house]="house"></app-hebergement-listing>
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>
