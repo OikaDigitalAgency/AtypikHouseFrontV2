@@ -11,6 +11,11 @@ import { FormContactComponent } from './components/form-contact/form-contact.com
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+
+
+
 
 import { SearchComponent } from './components/search/search.component';
 
@@ -75,7 +80,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatSelectModule,
     MatGridListModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatListModule
     
   ],
   providers: [FormBuilder],

@@ -1,4 +1,21 @@
-<img mat-card-image class="img" src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-<mat-grid-content>
-	<p>{{house.title}}</p>
-</mat-grid-content>
+<div class="container-card-house" >
+	<mat-card class="card-house"  >
+		<mat-card-header class="card-header-house">
+			<mat-card-title>{{house.title}}</mat-card-title>
+		</mat-card-header>
+		<img mat-card-image class="img-house" src="{{house.listidPics}}" alt="" mat-card-avatar>
+	  <mat-card-content>
+		<p>
+		  {{house.description}}
+		</p>
+		<mat-list role="list" class="list-house">
+			<mat-list-item role="listitem">Adresse: {{house.address}}</mat-list-item>
+		  	<mat-list-item role="listitem">Code postal: {{house.zipecode}}</mat-list-item>
+		  	<mat-list-item role="listitem">Ville: {{house.city}}</mat-list-item>
+		  	<mat-list-item role="listitem">Nombre de lit: {{house.nbbeds}}</mat-list-item>
+		  	<mat-list-item role="listitem">Prix: {{house.price}}</mat-list-item>
+		  	<mat-list-item role="listitem">Activité: {{house.listeActivities}}</mat-list-item>
+		</mat-list>	
+	  </mat-card-content>
+	</mat-card>
+  </div>
