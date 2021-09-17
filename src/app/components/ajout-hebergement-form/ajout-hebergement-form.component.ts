@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, } from '@angular/forms';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
 
 export interface Activité {
   name: string;
@@ -35,8 +35,7 @@ export class AjoutHebergementFormComponent implements OnInit {
       price: ['', [Validators.required, Validators.pattern(/^[0-9]\d*$/)]],
       tax: [null, [Validators.pattern(/^[0-9]\d*$/)]],
       imagefile: ['', [Validators.required]],
-      
-    },);
+    });
   }
 
   selectable = true;
@@ -44,8 +43,8 @@ export class AjoutHebergementFormComponent implements OnInit {
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   activities: Activité[] = [
-    {name: 'TagBasket'},
-    {name: 'TagFoot'},
+    { name: 'TagBasket' },
+    { name: 'TagFoot' },
   ];
 
   add(event: MatChipInputEvent): void {
@@ -53,7 +52,7 @@ export class AjoutHebergementFormComponent implements OnInit {
 
     // Ajouter un tag
     if (value) {
-      this.activities.push({name: value});
+      this.activities.push({ name: value });
     }
 
     // Supprimer la valeur de l'input
@@ -67,8 +66,8 @@ export class AjoutHebergementFormComponent implements OnInit {
       this.activities.splice(index, 1);
     }
   }
-  
-  
+
+
 
 }
 

@@ -1,7 +1,4 @@
-<section>
-    <mat-grid-list cols="3"  gutterSize = "0px" >
-        <mat-grid-tile *ngFor='let house of houses'>
-            <app-hebergement-listing class="hebergement-listing" [house]="house"></app-hebergement-listing>
-        </mat-grid-tile>
-    </mat-grid-list>
+<section class="list-container">
+    <app-hebergement-listing *ngFor='let house of houses' class="hebergement-listing" [house]="house">
+    </app-hebergement-listing>
 </section>

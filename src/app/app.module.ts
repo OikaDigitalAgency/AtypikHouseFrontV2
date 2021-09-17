@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatDatepickerModule, MatDateRangePicker } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,10 +11,8 @@ import { FormContactComponent } from './components/form-contact/form-contact.com
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatCardModule} from '@angular/material/card';
-import {MatListModule} from '@angular/material/list';
-
-
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 
 
 import { SearchComponent } from './components/search/search.component';
@@ -34,14 +32,14 @@ import { PageRegisterComponent } from './pages/page-register/page-register.compo
 import { HttpClientModule } from '@angular/common/http';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { HebergementListingComponent } from './components/hebergement-listing/hebergement-listing.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PageHousesComponent } from './pages/page-houses/page-houses.component';
 import { PageAjoutHebergementComponent } from './pages/page-ajout-hebergement/page-ajout-hebergement.component';
 import { AjoutHebergementFormComponent } from './components/ajout-hebergement-form/ajout-hebergement-form.component';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatIconModule} from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -69,6 +67,7 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
+    MatRippleModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -82,8 +81,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatChipsModule,
     MatIconModule,
     MatCardModule,
-    MatListModule
-    
+    MatListModule,
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

@@ -1,21 +1,34 @@
-<div class="container-card-house" >
-	<mat-card class="card-house"  >
+<div class="container-card-house">
+	<mat-card class="card-house">
 		<mat-card-header class="card-header-house">
+			<img mat-card-avatar class="example-header-image" src="{{house.listidPics[0]}}" alt="">
 			<mat-card-title>{{house.title}}</mat-card-title>
 		</mat-card-header>
-		<img mat-card-image class="img-house" src="{{house.listidPics}}" alt="" mat-card-avatar>
-	  <mat-card-content>
-		<p>
-		  {{house.description}}
-		</p>
-		<mat-list role="list" class="list-house">
-			<mat-list-item role="listitem">Adresse: {{house.address}}</mat-list-item>
-		  	<mat-list-item role="listitem">Code postal: {{house.zipecode}}</mat-list-item>
-		  	<mat-list-item role="listitem">Ville: {{house.city}}</mat-list-item>
-		  	<mat-list-item role="listitem">Nombre de lit: {{house.nbbeds}}</mat-list-item>
-		  	<mat-list-item role="listitem">Prix: {{house.price}}</mat-list-item>
-		  	<mat-list-item role="listitem">Activité: {{house.listeActivities}}</mat-list-item>
-		</mat-list>	
-	  </mat-card-content>
+
+
+		<img mat-card-image class="example-header-image container-image" src="{{house.listidPics[0]}}" alt="">
+
+		<mat-card-content class="content-text">
+			<p>
+				{{house.description}}
+			</p>
+		</mat-card-content>
+		<mat-card-content>
+
+			<mat-list role="list" class="list-house">
+				<mat-list-item>
+					<div class="container-list">
+						<div class="list-item" role="listitem">
+							<mat-icon aria-hidden="false" aria-label="Example home icon">bed</mat-icon>
+							{{house.nbbeds}}
+						</div>
+						<div class="price" role="listitem">{{house.price}}€ / Nuit</div>
+					</div>
+				</mat-list-item>
+				<mat-chip-list aria-label="Activités">
+					<mat-chip *ngFor="let activite of house.listeActivities | slice:0:3">{{activite}}</mat-chip>
+				</mat-chip-list>
+			</mat-list>
+		</mat-card-content>
 	</mat-card>
-  </div>
+</div>
