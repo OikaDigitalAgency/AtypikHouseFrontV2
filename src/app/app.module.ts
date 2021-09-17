@@ -33,6 +33,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { HebergementListingComponent } from './components/hebergement-listing/hebergement-listing.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PageHousesComponent } from './pages/page-houses/page-houses.component';
+import { PageAjoutHebergementComponent } from './pages/page-ajout-hebergement/page-ajout-hebergement.component';
+import { AjoutHebergementFormComponent } from './components/ajout-hebergement-form/ajout-hebergement-form.component';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,8 @@ import { PageHousesComponent } from './pages/page-houses/page-houses.component';
     PageRegisterComponent,
     HebergementListingComponent,
     PageHousesComponent,
+    PageAjoutHebergementComponent,
+    AjoutHebergementFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +73,10 @@ import { PageHousesComponent } from './pages/page-houses/page-houses.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    MatChipsModule,
+    MatIconModule
+    
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

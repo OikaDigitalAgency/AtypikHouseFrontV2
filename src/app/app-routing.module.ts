@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageContactComponent } from './pages/page-contact/page-contact.component';
 import { PageRegisterComponent } from './pages/page-register/page-register.component';
 import { PageHousesComponent } from './pages/page-houses/page-houses.component';
+import { PageAjoutHebergementComponent } from './pages/page-ajout-hebergement/page-ajout-hebergement.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'contact', component: PageContactComponent },
   { path: 'cgu', component: CguComponent },
   { path: 'hebergement', component: PageHousesComponent },
+  { path: 'ajout-hebergement', component: PageAjoutHebergementComponent },
   { path: '**', component: HomeComponent }
 ];
 
