@@ -40,6 +40,7 @@ import { PageAjoutHebergementComponent } from './pages/page-ajout-hebergement/pa
 import { AjoutHebergementFormComponent } from './components/ajout-hebergement-form/ajout-hebergement-form.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { MatIconModule } from '@angular/material/icon';
     PageHousesComponent,
     PageAjoutHebergementComponent,
     AjoutHebergementFormComponent,
+    CarrouselComponent,
   ],
   imports: [
     BrowserModule,

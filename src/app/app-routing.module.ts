@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CguComponent } from './pages/cgu/cgu.component';
 
@@ -8,6 +8,7 @@ import { PageContactComponent } from './pages/page-contact/page-contact.componen
 import { PageRegisterComponent } from './pages/page-register/page-register.component';
 import { PageHousesComponent } from './pages/page-houses/page-houses.component';
 import { PageAjoutHebergementComponent } from './pages/page-ajout-hebergement/page-ajout-hebergement.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,7 +19,9 @@ const routes: Routes = [
   { path: 'cgu', component: CguComponent },
   { path: 'hebergement', component: PageHousesComponent },
   { path: 'ajout-hebergement', component: PageAjoutHebergementComponent },
-  { path: '**', component: HomeComponent }
+  { path: 'carrousel', component: CarrouselComponent},
+  { path: '**', component: HomeComponent },
+  
 ];
 
 @NgModule({

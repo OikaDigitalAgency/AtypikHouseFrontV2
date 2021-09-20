@@ -16,7 +16,7 @@ export const HOUSE: IHousesEntity[] = [
         listidPics: ["/assets/img/house/tipi.jpg", "/assets/img/house/tente.jpg", "/assets/img/house/cabane.jpg"],
         dateDebut: "14:09:2021",
         dateFin: "14:09:2021",
-        idCategory: "1",
+        categories:"tipi",
         idUser: "2",
     },
     {
@@ -33,7 +33,7 @@ export const HOUSE: IHousesEntity[] = [
         listidPics: ["/assets/img/house/tente.jpg", "/assets/img/house/tente.jpg"],
         dateDebut: "14:09:2021",
         dateFin: "14:09:2021",
-        idCategory: "1",
+        categories:"tente",        
         idUser: "2",
     },
     {
@@ -50,7 +50,7 @@ export const HOUSE: IHousesEntity[] = [
         listidPics: ["/assets/img/house/cabane.jpg"],
         dateDebut: "14:09:2021",
         dateFin: "14:09:2021",
-        idCategory: "1",
+        categories:"cabane",
         idUser: "2",
     },
     {
@@ -67,7 +67,7 @@ export const HOUSE: IHousesEntity[] = [
         listidPics: ["/assets/img/house/yourte.jpg"],
         dateDebut: "14:09:2021",
         dateFin: "14:09:2021",
-        idCategory: "1",
+        categories:"yourte",        
         idUser: "2",
     },
     {
@@ -84,7 +84,7 @@ export const HOUSE: IHousesEntity[] = [
         listidPics: ["/assets/img/house/cabane.jpg"],
         dateDebut: "14:09:2021",
         dateFin: "14:09:2021",
-        idCategory: "1",
+        categories:"cabane",        
         idUser: "2",
     },
     {
@@ -101,7 +101,7 @@ export const HOUSE: IHousesEntity[] = [
         listidPics: ["/assets/img/house/tente.jpg"],
         dateDebut: "14:09:2021",
         dateFin: "14:09:2021",
-        idCategory: "1",
+        categories:"tente",        
         idUser: "2",
     }
 ];

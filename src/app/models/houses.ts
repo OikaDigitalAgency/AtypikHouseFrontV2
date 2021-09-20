@@ -12,7 +12,7 @@ export interface IRegisterHouses {
   listidPics: string[];
   dateDebut: string,
   dateFin: string,
-  idCategory: string;
+  categories: string;
   idUser: string;
 }
 
@@ -30,7 +30,7 @@ export interface IHousesEntity {
   listidPics: string[];
   dateDebut: string,
   dateFin: string,
-  idCategory: string;
+  categories: string;
   idUser: string;
 }
 

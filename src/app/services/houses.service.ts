@@ -59,7 +59,7 @@ export class HousesService {
       listidPics: registerValues.listidPics,
       dateDebut: registerValues.dateDebut,
       dateFin: registerValues.dateFin,
-      idCategory: `\/api\/categories\/${registerValues.idCategory}`,
+      categories: registerValues.categories,
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
@@ -85,7 +85,7 @@ export class HousesService {
       listidPics: registerValues.listidPics,
       dateDebut: registerValues.dateDebut,
       dateFin: registerValues.dateFin,
-      idCategory: `\/api\/categories\/${registerValues.idCategory}`,
+      categories: registerValues.categories,
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
