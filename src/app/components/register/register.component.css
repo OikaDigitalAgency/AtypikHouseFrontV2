@@ -1,0 +1,22 @@
+/*formulaire*/
+.register-form {
+  text-align: center;
+}
+
+.register-full-width {
+  display: -ms-grid;
+  display: grid;
+  vertical-align: top;
+  width: 350px;
+}
+
+#register-full-width-address {
+  width: 400px;
+}
+
+/*button*/
+.button {
+  background-color: #118041;
+  color: white;
+}
+/*# sourceMappingURL=register.component.css.map */

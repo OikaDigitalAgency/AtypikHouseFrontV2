@@ -8,6 +8,9 @@ import { PageContactComponent } from './pages/page-contact/page-contact.componen
 import { PageRegisterComponent } from './pages/page-register/page-register.component';
 import { PageHousesComponent } from './pages/page-houses/page-houses.component';
 import { PageAjoutHebergementComponent } from './pages/page-ajout-hebergement/page-ajout-hebergement.component';
+import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
+import { MonCompteComponent } from './components/mon-compte/mon-compte.component';
+import { ReservationsComponent } from './components/reservations/reservations.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,6 +21,9 @@ const routes: Routes = [
   { path: 'cgu', component: CguComponent },
   { path: 'hebergement', component: PageHousesComponent },
   { path: 'ajout-hebergement', component: PageAjoutHebergementComponent },
+  { path: 'dashboard', component: PageDashboardComponent },
+  { path: 'dashboard/mon-compte', component: MonCompteComponent },
+  { path: 'dashboard/reservations', component: ReservationsComponent },
   { path: '**', component: HomeComponent }
 ];
 

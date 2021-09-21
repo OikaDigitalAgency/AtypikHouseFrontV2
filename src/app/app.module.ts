@@ -40,6 +40,10 @@ import { PageAjoutHebergementComponent } from './pages/page-ajout-hebergement/pa
 import { AjoutHebergementFormComponent } from './components/ajout-hebergement-form/ajout-hebergement-form.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MonCompteComponent } from './components/mon-compte/mon-compte.component';
+import { ReservationsComponent } from './components/reservations/reservations.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +66,10 @@ import { MatIconModule } from '@angular/material/icon';
     PageHousesComponent,
     PageAjoutHebergementComponent,
     AjoutHebergementFormComponent,
+    PageDashboardComponent,
+    DashboardComponent,
+    MonCompteComponent,
+    ReservationsComponent,
   ],
   imports: [
     BrowserModule,
