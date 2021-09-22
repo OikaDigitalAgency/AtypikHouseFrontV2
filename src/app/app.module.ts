@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 import { SearchComponent } from './components/search/search.component';
@@ -90,6 +91,7 @@ import { ReservationsComponent } from './components/reservations/reservations.co
     MatIconModule,
     MatCardModule,
     MatListModule,
+    MatTabsModule
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],
