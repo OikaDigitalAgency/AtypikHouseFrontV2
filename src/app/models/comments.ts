@@ -3,7 +3,7 @@ export interface IRegisterComments {
     comment: string;
     rating: number; 
     date: string;
-    idBooking: string; 
+    idHouses: string; 
     idUser: string;
   }
   
@@ -11,7 +11,7 @@ export interface IRegisterComments {
     comment: string;
     rating: number; 
     date: string;
-    idBooking: string; 
+    idHouses: string; 
     idUser: string;
   }
   
