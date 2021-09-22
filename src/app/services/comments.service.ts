@@ -29,7 +29,7 @@ export class CommentsService {
       comment: registerValues.comment,
       rating: registerValues.rating,
       date: registerValues.date,
-      idBooking: `\/api\/bookings\/${registerValues.idBooking}`,
+      idHouses: `\/api\/houses\/${registerValues.idHouses}`,
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
@@ -45,7 +45,7 @@ export class CommentsService {
       comment: registerValues.comment,
       rating: registerValues.rating,
       date: registerValues.date,
-      idBooking: `\/api\/bookings\/${registerValues.idBooking}`, 
+      idHouses: `\/api\/houses\/${registerValues.idHouses}`, 
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
