@@ -1,13 +1,18 @@
 .dashboard{
     color: white;
     width: 20%;
-    height: 100vh;
+    height: 100%;
     background-color: #118041;
-    display: inline-block;
+    float: left;
+    display: flexbox;
 }
 
 a{
-    color: white !important;
+    color: white ;
+}
+
+a:active{
+    background-color: white;
 }
 
 h4{
