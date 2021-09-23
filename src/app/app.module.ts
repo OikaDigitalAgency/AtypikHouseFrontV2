@@ -91,7 +91,8 @@ import { ReservationsComponent } from './components/reservations/reservations.co
     MatIconModule,
     MatCardModule,
     MatListModule,
-    MatTabsModule
+    MatTabsModule,
+    
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],
