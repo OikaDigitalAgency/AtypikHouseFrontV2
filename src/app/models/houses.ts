@@ -9,11 +9,7 @@ export interface IRegisterHouses {
   price: number;
   tax: number;
   listeActivities: string[];
-  filePath: string;
-  fileUrl: string;
-  file: string;
-  createdAt: string;
-  updatedAt: string;
+  listidPics: string[];
   dateDebut: string,
   dateFin: string,
   categories: string;
@@ -31,11 +27,7 @@ export interface IHousesEntity {
   price: number;
   tax: number;
   listeActivities: string[];
-  filePath: string;
-  fileUrl: string;
-  file: string;
-  createdAt: string;
-  updatedAt: string;
+  listidPics: string[];
   dateDebut: string,
   dateFin: string,
   categories: string;

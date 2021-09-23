@@ -56,13 +56,7 @@ export class HousesService {
       price: registerValues.price,
       tax: registerValues.tax,
       listeActivities: registerValues.listeActivities,
-      /*******/
-      filePath: registerValues.filePath,
-      fileUrl: registerValues.fileUrl,
-      file: registerValues.file,
-      /*******/
-      createdAt: registerValues.createdAt,
-      updatedAt: registerValues.updatedAt,
+      listidPics: registerValues.listidPics,
       dateDebut: registerValues.dateDebut,
       dateFin: registerValues.dateFin,
       categories: registerValues.categories,
@@ -88,13 +82,7 @@ export class HousesService {
       price: registerValues.price,
       tax: registerValues.tax,
       listeActivities: registerValues.listeActivities,
-      /*******/
-      filePath: registerValues.filePath,
-      fileUrl: registerValues.fileUrl,
-      file: registerValues.file,
-      /*******/
-      createdAt: registerValues.createdAt,
-      updatedAt: registerValues.updatedAt,
+      listidPics: registerValues.listidPics,
       dateDebut: registerValues.dateDebut,
       dateFin: registerValues.dateFin,
       categories: registerValues.categories,
