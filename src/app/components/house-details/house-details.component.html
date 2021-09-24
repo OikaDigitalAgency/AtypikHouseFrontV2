@@ -1,13 +1,15 @@
 <div class="cart">
     <mat-card>
-        <div class="house-img">
-            <img class="login-form-img" src="/assets/img/cabane-ext.jpg" alt="Logo atypikhouse" height= "500px" width= "500px">
-        </div>
-        <div class="house-description">
-            <h2>Cabane xxx</h2>
-            <p>What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?</p>
-            <h6>TagFoot</h6>
-        </div>
+        <mat-card-title>{{house.title}}</mat-card-title>
+        <img class="house-detail-img" src="{{house.listidPics}}" height= "500px" width= "500px">
+        <p>
+            {{house.description}}
+        </p>
+        <mat-chip-list aria-label="Activities">
+            <mat-chip>
+                {{house.listeActivities}}
+            </mat-chip>
+        </mat-chip-list>
         <form [formGroup]="form">
 
             <mat-form-field appearance="outline">
@@ -32,7 +34,7 @@
                 <input matInput type="number" formControlName='nbPerson'>
                 <mat-error *ngIf="form.get('nbPerson')?.hasError('required')">Le nombre d'adultes est requis</mat-error>
                 <mat-error *ngIf="form.get('nbPerson')?.hasError('min')">Il faut au moins un adulte</mat-error>
-            </mat-form-field>
+            </mat-form-field><br>
             <mat-form-field class="person-field" appearance="outline">
                 <mat-label>Enfants</mat-label>
                 <input matInput type="number" formControlName='nbChildren'>
