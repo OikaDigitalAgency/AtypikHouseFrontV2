@@ -12,6 +12,7 @@ import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.co
 import { MonCompteComponent } from './components/mon-compte/mon-compte.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { PageHouseDetailsComponent } from './pages/page-house-details/page-house-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'dashboard', component: PageDashboardComponent },
   { path: 'dashboard/mon-compte', component: MonCompteComponent },
   { path: 'dashboard/reservations', component: ReservationsComponent },
+  { path: 'house-details', component: PageHouseDetailsComponent },
   { path: '**', component: HomeComponent }
 ];
 
