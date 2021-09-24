@@ -1,5 +1,6 @@
 .cart{
-    margin: 5% 20% 5% 20%;
+    margin: 5% auto 5% auto;
+    width: max-content;
 }
 
 p{
@@ -8,7 +9,7 @@ p{
 
 mat-form-field{
     margin: 10px 0px 0px 15px;
-    width: 240px;
+    width: 245px;
 }
 
 button{
@@ -17,7 +18,7 @@ button{
 	background-color: #118041;
 	width: 200px;
 	min-height: 50px;
-    margin-left: 65px;
+    margin: 10px 0px 0px 15px;
 }
 
 button:hover {
