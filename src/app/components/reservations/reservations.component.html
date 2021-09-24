@@ -8,8 +8,8 @@
                 <mat-list role="list" class="list-house">
                     <mat-chip-list aria-label="Activités">
                         <mat-chip *ngFor='let booking of bookings_start'>
-                            {{booking.status}}
-                            {{booking.nbpersons}}
+                            statu: {{booking.status}}
+                            personne: {{booking.nbpersons}}
                         </mat-chip>
                     </mat-chip-list>
                 </mat-list>
@@ -20,8 +20,8 @@
                 <mat-list role="list" class="list-house">
                     <mat-chip-list aria-label="Activités">
                         <mat-chip *ngFor='let booking of bookings_end'>
-                            {{booking.status}}
-                            {{booking.nbpersons}}
+                            statu: {{booking.status}}
+                            personne:{{booking.nbpersons}}
                         </mat-chip>
                     </mat-chip-list>
                 </mat-list>
