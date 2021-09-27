@@ -5,6 +5,11 @@
         <p>
             {{house.description}}
         </p>
+        <div class="list-item" role="listitem">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">bed</mat-icon>
+            {{house.nbbeds}}
+        </div>
+        <div class="price" role="listitem">{{house.price}}€ / Nuit</div>
         <mat-chip-list aria-label="Activities">
             <mat-chip>
                 {{house.listeActivities}}

@@ -25,3 +25,17 @@ button:hover {
   cursor: pointer;
   background-color: rgb(23, 156, 63);
 }
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    width: 39px;
+    margin-bottom: 2%;
+}
+
+.price {
+    font-weight: bold;
+    color: #278c52;
+    font-size: 1.3em;
+    float: right;
+}
