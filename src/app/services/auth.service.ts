@@ -5,7 +5,7 @@ import { IRegister, IUserEntity } from '../models/register';
 import { ILogin, ILoginEntity } from '../models/login';
 import { ISearch, ISearchEntity } from '../models/search';
 
-const AUTH_API = 'http://localhost:8000';
+const AUTH_API = 'https://localhost:8000';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'})
@@ -15,7 +15,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private readonly http: HttpClient) { }
+  constructor(private readonly https: HttpClient) { }
 
   /**
    * Permet de logger l'utilisateur sur l'application
@@ -27,7 +27,7 @@ export class AuthService {
       username: loginValues.email,
       password: loginValues.password,
     };
-    return this.http.post(`${AUTH_API}/api/login`, body, httpOptions);
+    return this.https.post(`${AUTH_API}/api/login`, body, httpOptions);
   }
 
   /**
@@ -46,9 +46,36 @@ export class AuthService {
       city: registerValues.city,
     };
 
-    return this.http.post(`${AUTH_API}/register`, body, httpOptions);
+    return this.https.post(`${AUTH_API}/register`, body, httpOptions);
   }
 
+ /**
+   * Permet de mettre a jour un user.
+   */
+  update(registerValues: IRegister, id: number): Observable<any> {
+    const body: IUserEntity = {
+      email: registerValues.email,
+      plainPassword: registerValues.password, 
+      lastname: registerValues.lastName,
+      firstname: registerValues.firstName,
+      zipcode: registerValues.zipCode,
+      address: registerValues.address,
+      phone: registerValues.phoneNumber,
+      city: registerValues.city,
+    };
+
+    return this.https.put(`${AUTH_API}/api/users/${id}`, body, httpOptions);
+  }
+
+   /**
+   * Permet de supprimer un user.
+   */
+    deleteUser(id: number): Observable<any> {
+      return this.https.delete(`${AUTH_API}/api/users/${id}`, httpOptions);
+    }
+
+
+  /**Requete search house */
   search(searchValues: ISearch): Observable<any> {
     const body: ISearchEntity = {
       dateArrivée: searchValues.dateFrom,
@@ -57,6 +84,6 @@ export class AuthService {
       nombreEnfants: searchValues.nbChildren,
       ville: searchValues.city,
     };
-    return this.http.post(`${AUTH_API}/api/search`, body, httpOptions);
+    return this.https.post(`${AUTH_API}/api/search`, body, httpOptions);
   }
 }
