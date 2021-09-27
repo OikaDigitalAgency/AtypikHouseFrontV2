@@ -1,0 +1,41 @@
+.cart{
+    margin: 5% auto 5% auto;
+    width: max-content;
+}
+
+p{
+    width: 800px;
+}
+
+mat-form-field{
+    margin: 10px 0px 0px 15px;
+    width: 245px;
+}
+
+button{
+	border: none;
+	color: white;
+	background-color: #118041;
+	width: 200px;
+	min-height: 50px;
+    margin: 10px 0px 0px 15px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(23, 156, 63);
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    width: 39px;
+    margin-bottom: 2%;
+}
+
+.price {
+    font-weight: bold;
+    color: #278c52;
+    font-size: 1.3em;
+    float: right;
+}

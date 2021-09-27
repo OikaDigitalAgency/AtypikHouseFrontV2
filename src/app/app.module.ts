@@ -45,6 +45,8 @@ import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.co
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MonCompteComponent } from './components/mon-compte/mon-compte.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
+import { HouseDetailsComponent } from './components/house-details/house-details.component';
+import { PageHouseDetailsComponent } from './pages/page-house-details/page-house-details.component';
 
 
 @NgModule({
@@ -72,7 +74,9 @@ import { ReservationsComponent } from './components/reservations/reservations.co
     DashboardComponent,
     MonCompteComponent,
     ReservationsComponent,
-    
+    HouseDetailsComponent,
+    PageHouseDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
