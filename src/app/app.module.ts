@@ -46,6 +46,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MonCompteComponent } from './components/mon-compte/mon-compte.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +72,7 @@ import { ReservationsComponent } from './components/reservations/reservations.co
     DashboardComponent,
     MonCompteComponent,
     ReservationsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -92,6 +94,8 @@ import { ReservationsComponent } from './components/reservations/reservations.co
     MatCardModule,
     MatListModule,
     MatTabsModule,
+    
+    
     
   ],
   providers: [FormBuilder],
