@@ -1,10 +1,19 @@
 .reservations-section{
     margin: 1% 0% 0% 20%;
-    text-align: center;
     width: 65%;
 
 }
 
 h3{
     text-align: center;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+    margin-left: 1%;
+}
+
+mat-chip{
+    float: right;
 }

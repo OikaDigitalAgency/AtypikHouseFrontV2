@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BOOKING_END } from 'src/app/donnees/mock-booking-end';
 import { BOOKING_START } from 'src/app/donnees/mock-booking-start';
@@ -8,7 +8,7 @@ import { BookingService } from 'src/app/services/booking.service';
 @Component({
   selector: 'app-reservations',
   templateUrl: './reservations.component.html',
-  styleUrls: ['./reservations.component.scss']
+  styleUrls: ['./reservations.component.scss'],
 })
 export class ReservationsComponent implements OnInit {
 

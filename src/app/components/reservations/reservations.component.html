@@ -3,12 +3,24 @@
     <h3>Mes réservations</h3>
     <mat-divider></mat-divider>
     <mat-tab-group>
-        <mat-tab label="Réservations en cours">Aucune réservation en cours
+        <mat-tab label="Réservations en cours">
+            <mat-card>
+                <mat-card-title>house title</mat-card-title>
+                <img mat-card-image src="/src/assets/img/Logo2.png">
+                <mat-chip>Statut : En cours</mat-chip>
+            </mat-card>
+            <mat-divider></mat-divider>
+            <mat-card>
+                <mat-card-title>house title</mat-card-title>
+                <img mat-card-image src="/src/assets/img/Logo2.png">
+                <mat-chip>Statut : Validée</mat-chip>
+            </mat-card>
+            <mat-divider></mat-divider>
             <mat-card-content>
                 <mat-list role="list" class="list-house">
                     <mat-chip-list aria-label="Activités">
                         <mat-chip *ngFor='let booking of bookings_start'>
-                            statu: {{booking.status}}
+                            statut: {{booking.status}}
                             personne: {{booking.nbpersons}}
                         </mat-chip>
                     </mat-chip-list>
