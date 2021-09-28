@@ -1,4 +1,5 @@
 <form class="register-form" [formGroup]="form">
+	<img class="login-form-img" src="/assets/img/Logo2.png" alt="Logo atypikhouse" height= "200px" width= "200px">
 	<mat-form-field class="register-full-width" appearance="outline">
 		<mat-label>E-mail</mat-label>
 		<input matInput formControlName='email'>
@@ -83,7 +84,7 @@
 	<section class="register-full-width">
 		<div class="container-button">
 			<button mat-raised-button type="button" class="button" (click)="onSave(form.value)"
-				[disabled]="!form.valid">Envoyer</button>
+				[disabled]="!form.valid">S'inscrire</button>
 		</div>
 	</section>
 </form>
