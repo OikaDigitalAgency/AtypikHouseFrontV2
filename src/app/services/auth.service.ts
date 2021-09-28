@@ -102,7 +102,7 @@ export class AuthService {
       listeActivities: addhouseValues.listeActivities,
       imagefile: addhouseValues.imagefile,
     };
-    return this.http.post(`${AUTH_API}/api/addhouse`, body, httpOptions);
+    return this.https.post(`${AUTH_API}/api/addhouse`, body, httpOptions);
   }
 
   contact(contactValues: IContact): Observable<any> {
@@ -112,6 +112,6 @@ export class AuthService {
       email: contactValues.email, 
       message: contactValues.message, 
     };
-    return this.http.post(`${AUTH_API}/api/contact`, body, httpOptions);
+    return this.https.post(`${AUTH_API}/api/contact`, body, httpOptions);
   }
 }
