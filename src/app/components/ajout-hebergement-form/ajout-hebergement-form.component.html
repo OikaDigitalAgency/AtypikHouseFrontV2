@@ -98,7 +98,7 @@
 	</section>
 	<section>
 		<div class="container-button">
-			<button mat-raised-button type="button" class="button">Envoyer</button>
+			<button mat-raised-button type="button" class="button" (click)="onSave(form.value)" [disabled]="!form.valid">Envoyer</button>
 		</div>
 	</section>
 </form>

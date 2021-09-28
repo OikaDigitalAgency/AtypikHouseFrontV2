@@ -28,7 +28,7 @@
       <mat-error *ngIf="form.get('message')?.hasError('maxlength')">Le message peut contenir 255 caractères maxmimum</mat-error>
     </mat-form-field>
     <div class="button-row">
-      <button class="Send-button">Envoyer</button>
+      <button class="Send-button" (click)="onSave(form.value)" [disabled]="!form.valid">Envoyer</button>
     </div>
   </form>
 </div>

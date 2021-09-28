@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { IAddHouses } from 'src/app/models/addhouse';
+import { AuthService } from 'src/app/services/auth.service';
 
 export interface Activité {
   name: string;
@@ -21,7 +23,7 @@ export class AjoutHebergementFormComponent implements OnInit {
   }
 
 
-  constructor(private readonly fb: FormBuilder,) { }
+  constructor(private readonly fb: FormBuilder,private readonly authService: AuthService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -63,6 +65,16 @@ export class AjoutHebergementFormComponent implements OnInit {
 
     if (index >= 0) {
       this.activities.splice(index, 1);
+    }
+  }
+
+  onSave(formValues: IAddHouses) {
+    // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
+    if (this.form.valid) {
+      this.authService.addhouse(formValues).subscribe((tokenValue) => {
+        const token = `Bearer ${tokenValue.token}`;
+        sessionStorage.setItem('token', token);
+      }, (error) => { console.log(error) });
     }
   }
 

@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { IRegister, IUserEntity } from '../models/register';
 import { ILogin, ILoginEntity } from '../models/login';
 import { ISearch, ISearchEntity } from '../models/search';
+import { IAddHouses, IAddHousesEntity } from '../models/addhouse';
+import { IContact, IContactEntity } from '../models/contact';
 
 const AUTH_API = 'http://localhost:8000';
 
@@ -46,7 +48,7 @@ export class AuthService {
       city: registerValues.city,
     };
 
-    return this.http.post(`${AUTH_API}/register`, body, httpOptions);
+    return this.http.post(`${AUTH_API}/api/register`, body, httpOptions);
   }
 
   search(searchValues: ISearch): Observable<any> {
@@ -58,5 +60,31 @@ export class AuthService {
       ville: searchValues.city,
     };
     return this.http.post(`${AUTH_API}/api/search`, body, httpOptions);
+  }
+
+  addhouse(addhouseValues: IAddHouses): Observable<any> {
+    const body: IAddHousesEntity = {
+      title: addhouseValues.title,
+      description: addhouseValues.description,
+      address: addhouseValues.address, 
+      city: addhouseValues.city,
+      zipecode: addhouseValues.zipecode,
+      nbbeds: addhouseValues.nbbeds,
+      price: addhouseValues.price,
+      tax: addhouseValues.tax,
+      listeActivities: addhouseValues.listeActivities,
+      imagefile: addhouseValues.imagefile,
+    };
+    return this.http.post(`${AUTH_API}/api/addhouse`, body, httpOptions);
+  }
+
+  contact(contactValues: IContact): Observable<any> {
+    const body: IContactEntity = {
+      firstname: contactValues.firstname,
+      lastname: contactValues.lastname,
+      email: contactValues.email, 
+      message: contactValues.message, 
+    };
+    return this.http.post(`${AUTH_API}/api/contact`, body, httpOptions);
   }
 }
