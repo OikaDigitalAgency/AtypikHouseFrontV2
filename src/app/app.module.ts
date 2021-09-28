@@ -48,6 +48,7 @@ import { ReservationsComponent } from './components/reservations/reservations.co
 import { HouseDetailsComponent } from './components/house-details/house-details.component';
 import { PageHouseDetailsComponent } from './pages/page-house-details/page-house-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { PageHouseDetailsComponent } from './pages/page-house-details/page-house
     ReservationsComponent,
     HouseDetailsComponent,
     PageHouseDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -96,6 +98,8 @@ import { PageHouseDetailsComponent } from './pages/page-house-details/page-house
     MatCardModule,
     MatListModule,
     MatTabsModule,
+    
+    
     
   ],
   providers: [FormBuilder],
