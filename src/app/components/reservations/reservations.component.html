@@ -5,9 +5,9 @@
     <mat-tab-group>
         <mat-tab label="Réservations en cours">
             <mat-card>
-                <mat-card-title>house title</mat-card-title>
-                <img mat-card-image src="/src/assets/img/Logo2.png">
-                <mat-chip>Statut : En cours</mat-chip>
+                <mat-card-title *ngFor='let house of houses'>{{house.title}}</mat-card-title>
+                <img mat-card-image *ngFor='let house of houses' src="{{house.listidPics}}">
+                <mat-chip *ngFor='let house of houses'>Status: {{house.status}}</mat-chip>
             </mat-card>
             <mat-divider></mat-divider>
             <mat-card>

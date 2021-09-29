@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-mon-compte',
   templateUrl: './mon-compte.component.html',
   styleUrls: ['./mon-compte.component.scss']
+  
 })
 export class MonCompteComponent implements OnInit {
 

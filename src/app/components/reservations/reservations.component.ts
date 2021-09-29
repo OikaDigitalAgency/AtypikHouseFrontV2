@@ -2,7 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BOOKING_END } from 'src/app/donnees/mock-booking-end';
 import { BOOKING_START } from 'src/app/donnees/mock-booking-start';
+import { HOUSE } from 'src/app/donnees/mock-houses';
 import { IBookingEntity } from 'src/app/models/booking';
+import { IHousesEntity } from 'src/app/models/houses';
 import { BookingService } from 'src/app/services/booking.service';
 
 @Component({
@@ -20,12 +22,15 @@ export class ReservationsComponent implements OnInit {
     });
   }
 
+  houses!: IHousesEntity[];
+
   bookings_end!: IBookingEntity[];
   bookings_start!: IBookingEntity[];
 
   ngOnInit(): void {
     this.bookings_end = BOOKING_END;
     this.bookings_start = BOOKING_START;
+    this.houses = HOUSE;
     // this.housesService.searchHouses(this.params.city, this.params.dateFin, this.params.nbbeds).subscribe((houses: IHousesEntity[]) => this.houses = houses);
     // requête ici
   }
