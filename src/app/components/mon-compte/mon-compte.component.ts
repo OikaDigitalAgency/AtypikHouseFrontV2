@@ -11,6 +11,8 @@ export class MonCompteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    /*this.pokemonsService.getPokemons()
+				.subscribe(pokemons => this.pokemons = pokemons);*/
   }
 
 }
