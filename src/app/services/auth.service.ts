@@ -51,6 +51,13 @@ export class AuthService {
     return this.https.post(`${AUTH_API}/register`, body, httpOptions);
   }
 
+  /**
+   * Permet d'afficher un user.
+   */
+   getUser(id: number): Observable<any> {
+    return this.https.get(`${AUTH_API}/api/profile/${id}`, httpOptions);
+  }
+
  /**
    * Permet de mettre a jour un user.
    */
