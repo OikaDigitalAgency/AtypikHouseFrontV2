@@ -18,13 +18,11 @@ import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractC
 export class MonCompteComponent implements OnInit {
   form!: FormGroup;
 
-  user: any = null;
+  user: any;
 
   constructor(private readonly fb: FormBuilder, private readonly authService: AuthService, private readonly router: Router, private readonly route: ActivatedRoute ) { 
     this.user = [];
   }
-
-  
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -39,8 +37,12 @@ export class MonCompteComponent implements OnInit {
       confirmPassword: [''],
       
     }, { validators: confirmationPassword() });
-  }
 
+    /*let id = +this.route.snapshot.params.id;
+    this.authService.getUser(id).subscribe(data : any) => {
+      this.user=data;
+    }*/
+  }
 
   onSave(formValues: IRegister) {
     // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
@@ -52,14 +54,6 @@ export class MonCompteComponent implements OnInit {
     }
   }
 }
-
-  /*OnWatch(){
-    let id = +this.route.snapshot.params.id;
-    this.authService.getUser(id)
-				.subscribe(user => this.user = user);
-  }*/
-    
-  
 
   /** Permet de vérifier que le password et le confirmPassword sont identiques */
 export function confirmationPassword(): ValidatorFn {
@@ -74,5 +68,7 @@ export function confirmationPassword(): ValidatorFn {
     } : null;
   };
 }
+
+
 
 
