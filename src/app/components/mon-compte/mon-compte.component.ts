@@ -45,20 +45,20 @@ export class MonCompteComponent implements OnInit {
     /*let id = +this.route.snapshot.params.id;
     this.authService.getUser(id).subscribe(user => this.user = user);*/
 
-
      let id = +this.route.snapshot.params.id;
      this.authService.getUser(id).subscribe((tokenValue) => {
        const token = `Bearer ${tokenValue.token}`;
    
        sessionStorage.setItem('token', token)
        
-       return this.authService.getUser(id).subscribe(user => this.user = user);
-
-     }, (error) => { console.log(error) })
-    
- } 
-
-}
+       this.authService.getUser(id).subscribe(user => {
+         if(user){
+           this.user = user
+          }
+        });
+      }, (error) => { console.log(error) })
+    }
+  }
 
   
 
