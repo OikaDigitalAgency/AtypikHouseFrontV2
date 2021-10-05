@@ -3,9 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IRegister, IUserEntity } from '../models/register';
 import { ILogin, ILoginEntity } from '../models/login';
-import { ISearch, ISearchEntity } from '../models/search';
-import { IAddHouses, IAddHousesEntity } from '../models/addhouse';
-import { IContact, IContactEntity } from '../models/contact';
 
 const AUTH_API = 'https://localhost:8000';
 
@@ -83,42 +80,4 @@ export class AuthService {
       return this.https.delete(`${AUTH_API}/api/users/${id}`, httpOptions);
     }
 
-
-  /**Requete search house */
-  search(searchValues: ISearch): Observable<any> {
-    const body: ISearchEntity = {
-      dateArrivée: searchValues.dateFrom,
-      dateDépart: searchValues.dateTo,
-      nombreAdultes: searchValues.nbPerson,
-      nombreEnfants: searchValues.nbChildren,
-      ville: searchValues.city,
-    };
-    return this.https.post(`${AUTH_API}/api/search`, body, httpOptions);
-  }
-
-  addhouse(addhouseValues: IAddHouses): Observable<any> {
-    const body: IAddHousesEntity = {
-      title: addhouseValues.title,
-      description: addhouseValues.description,
-      address: addhouseValues.address, 
-      city: addhouseValues.city,
-      zipecode: addhouseValues.zipecode,
-      nbbeds: addhouseValues.nbbeds,
-      price: addhouseValues.price,
-      tax: addhouseValues.tax,
-      listeActivities: addhouseValues.listeActivities,
-      imagefile: addhouseValues.imagefile,
-    };
-    return this.https.post(`${AUTH_API}/api/addhouse`, body, httpOptions);
-  }
-
-  contact(contactValues: IContact): Observable<any> {
-    const body: IContactEntity = {
-      firstname: contactValues.firstname,
-      lastname: contactValues.lastname,
-      email: contactValues.email, 
-      message: contactValues.message, 
-    };
-    return this.https.post(`${AUTH_API}/api/contact`, body, httpOptions);
-  }
 }

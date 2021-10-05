@@ -9,6 +9,8 @@ export interface IRegisterHouses {
   price: number;
   tax: number;
   listeActivities: string[];
+  listIdEquipements: string[],
+  listidTags: string[],
   listidPics: string[];
   dateDebut: string,
   dateFin: string,
@@ -27,6 +29,8 @@ export interface IHousesEntity {
   price: number;
   tax: number;
   listeActivities: string[];
+  listIdEquipements: string[],
+  listidTags: string[],
   listidPics: string[];
   dateDebut: string,
   dateFin: string,

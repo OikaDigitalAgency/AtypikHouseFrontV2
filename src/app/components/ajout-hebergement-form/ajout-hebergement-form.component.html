@@ -91,11 +91,13 @@
 			</mat-chip-list>
 		</mat-form-field>
 	</section>
+	
 	<section class="imagefile">
 		<label for="file">Ajoutez une image de votre hebergement</label><br>
 		<input type="file" (change)="onFileChanged($event)" formControlName='imagefile'>
 		<mat-error *ngIf="form.get('imagefile')?.hasError('required')">L'image est nécessaire</mat-error>
 	</section>
+	
 	<section>
 		<div class="container-button">
 			<button mat-raised-button type="button" class="button" (click)="onSave(form.value)" [disabled]="!form.valid">Envoyer</button>

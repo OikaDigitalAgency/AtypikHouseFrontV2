@@ -47,7 +47,7 @@ import { MonCompteComponent } from './components/mon-compte/mon-compte.component
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { HouseDetailsComponent } from './components/house-details/house-details.component';
 import { PageHouseDetailsComponent } from './pages/page-house-details/page-house-details.component';
-import { FormCompteComponent } from './form-compte/form-compte.component';
+import { FormCompteComponent } from './components/form-compte/form-compte.component';
 
 
 @NgModule({
