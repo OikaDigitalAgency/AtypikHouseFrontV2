@@ -44,7 +44,7 @@ export class HousesService {
   * Permet d'enregistrer un nouveau house 
   * sur l'application
   */
-  register(registerValues: IRegisterHouses): Observable<any> {
+  registerHouse(registerValues: IRegisterHouses): Observable<any> {
     const body: IHousesEntity = {
       title: registerValues.title,
       description: registerValues.description,
@@ -56,10 +56,12 @@ export class HousesService {
       price: registerValues.price,
       tax: registerValues.tax,
       listeActivities: registerValues.listeActivities,
-      listidPics: registerValues.listidPics,
+      listIdEquipements: registerValues.listIdEquipements,
+      listidTags: registerValues.listidTags,
       dateDebut: registerValues.dateDebut,
       dateFin: registerValues.dateFin,
       categories: registerValues.categories,
+      listidPics: registerValues.listidPics,
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
@@ -82,10 +84,12 @@ export class HousesService {
       price: registerValues.price,
       tax: registerValues.tax,
       listeActivities: registerValues.listeActivities,
-      listidPics: registerValues.listidPics,
+      listIdEquipements: registerValues.listIdEquipements,
+      listidTags: registerValues.listidTags,
       dateDebut: registerValues.dateDebut,
       dateFin: registerValues.dateFin,
       categories: registerValues.categories,
+      listidPics: registerValues.listidPics,
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 

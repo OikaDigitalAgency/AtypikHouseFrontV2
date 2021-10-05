@@ -18,6 +18,8 @@ export const HOUSE: IHousesEntity[] = [
         dateFin: "14:09:2021",
         categories:"tipi",
         idUser: "2",
+        listIdEquipements: ["tv", "radio"],
+        listidTags: ["test"]
     },
     {
         title: "tente",
@@ -35,6 +37,8 @@ export const HOUSE: IHousesEntity[] = [
         dateFin: "14:09:2021",
         categories:"tente",        
         idUser: "2",
+        listIdEquipements: ["tv", "radio"],
+        listidTags: ["test"]
     },
     {
         title: "cabane dans les arbres",
@@ -52,6 +56,8 @@ export const HOUSE: IHousesEntity[] = [
         dateFin: "14:09:2021",
         categories:"cabane",
         idUser: "2",
+        listIdEquipements: ["tv", "radio"],
+        listidTags: ["test"]
     },
     {
         title: "yourte",
@@ -69,6 +75,8 @@ export const HOUSE: IHousesEntity[] = [
         dateFin: "14:09:2021",
         categories:"yourte",        
         idUser: "2",
+        listIdEquipements: ["tv", "radio"],
+        listidTags: ["test"]
     },
     {
         title: "cabane",
@@ -86,6 +94,8 @@ export const HOUSE: IHousesEntity[] = [
         dateFin: "14:09:2021",
         categories:"cabane",        
         idUser: "2",
+        listIdEquipements: ["tv", "radio"],
+        listidTags: ["test"]
     },
     {
         title: "tente",
@@ -103,5 +113,7 @@ export const HOUSE: IHousesEntity[] = [
         dateFin: "14:09:2021",
         categories:"tente",        
         idUser: "2",
+        listIdEquipements: ["tv", "radio"],
+        listidTags: ["test"]
     }
 ];
