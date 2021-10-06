@@ -6,7 +6,7 @@
         <mat-tab label="Réservations en cours">
             <mat-card>
                 <mat-card-title *ngFor='let house of houses'>{{house.title}}</mat-card-title>
-                <img mat-card-image *ngFor='let house of houses' src="{{house.listidPics}}">
+                <img mat-card-image *ngFor='let house of houses' src="{{house.fileUrl}}">
                 <mat-chip *ngFor='let house of houses'>Status: {{house.status}}</mat-chip>
             </mat-card>
             <mat-divider></mat-divider>
@@ -32,12 +32,12 @@
                 <mat-list role="list" class="list-house">
                     <mat-chip-list aria-label="Activités">
                         <mat-chip *ngFor='let booking of bookings_end'>
-                            statu: {{booking.status}}
+                            statut: {{booking.status}}
                             personne:{{booking.nbpersons}}
                         </mat-chip>
                     </mat-chip-list>
                 </mat-list>
-            </mat-card-content> 
+            </mat-card-content>
         </mat-tab>
     </mat-tab-group>
 </div>

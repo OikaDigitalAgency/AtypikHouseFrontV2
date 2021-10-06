@@ -24,11 +24,11 @@ export class HousesService {
 
   private houseUrl = 'api/home';  // URL to web api
 
-  private log(log: string){
+  private log(log: string) {
     console.info(log);
   }
 
-  private handleError<T>(operation= 'operation', result?: T){
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.log(error);
       console.log(`${operation} failed: ${error.message}`);
@@ -49,7 +49,7 @@ export class HousesService {
       title: registerValues.title,
       description: registerValues.description,
       address: registerValues.address,
-      zipecode: registerValues.zipecode,
+      zipcode: registerValues.zipcode,
       city: registerValues.city,
       status: registerValues.status,
       nbbeds: registerValues.nbbeds,
@@ -60,8 +60,8 @@ export class HousesService {
       listidTags: registerValues.listidTags,
       dateDebut: registerValues.dateDebut,
       dateFin: registerValues.dateFin,
-      categories: registerValues.categories,
-      listidPics: registerValues.listidPics,
+      categorie: registerValues.categorie,
+      fileUrl: registerValues.fileUrl,
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
@@ -77,7 +77,7 @@ export class HousesService {
       title: registerValues.title,
       description: registerValues.description,
       address: registerValues.address,
-      zipecode: registerValues.zipecode,
+      zipcode: registerValues.zipcode,
       city: registerValues.city,
       status: registerValues.status,
       nbbeds: registerValues.nbbeds,
@@ -88,8 +88,8 @@ export class HousesService {
       listidTags: registerValues.listidTags,
       dateDebut: registerValues.dateDebut,
       dateFin: registerValues.dateFin,
-      categories: registerValues.categories,
-      listidPics: registerValues.listidPics,
+      categorie: registerValues.categorie,
+      fileUrl: registerValues.fileUrl,
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
@@ -104,7 +104,7 @@ export class HousesService {
   }
 
 
-/*recupere la liste des houses fictif*/ 
+  /*recupere la liste des houses fictif*/
   getHouses(): Observable<IHousesEntity[]> {
     return this.http.get<IHousesEntity[]>(this.houseUrl)
       .pipe(
@@ -122,7 +122,16 @@ export class HousesService {
    * @returns 
    */
   searchHouses(city: string, dateFin: Date, nbbeds: number): Observable<any> {
-    return this.http.get(`${AUTH_API}/api/houses?city=${city}&dateFin[after]=${dateFin}&nbbeds[gte]=${nbbeds}&status=true`)
+    // dans notre requête, on a des valeurs "non conformes". l'idée c'est de transformer la route en url.
+
+    return this.http.get<IHousesEntity[]>(`${AUTH_API}/api/houses?city=${city}&dateFin[after]=${dateFin}&nbbeds[gte]=${nbbeds}&status=true`).pipe(
+      tap(items => {
+        items.map(item => {
+          item.fileUrl = `${AUTH_API}${item.fileUrl}`;
+        });
+      }),
+      catchError(this.handleError<IHousesEntity[]>('searchHouses', []))
+    );
   }
 
   /**
@@ -132,5 +141,5 @@ export class HousesService {
     return this.http.delete(`${AUTH_API}/api/houses`, httpOptions);
   }
 
-  
+
 }

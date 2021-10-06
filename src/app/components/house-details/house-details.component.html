@@ -1,7 +1,7 @@
 <div class="cart">
     <mat-card>
         <mat-card-title>{{house.title}}</mat-card-title>
-        <img class="house-detail-img" src="{{house.listidPics}}" height= "600px" width= "800px">
+        <img class="house-detail-img" src="http://localhost:8000{{house.fileUrl}}" height="600px" width="800px">
         <p>
             {{house.description}}
         </p>
@@ -19,17 +19,18 @@
             <mat-form-field appearance="outline">
                 <mat-label>Dates de voyage</mat-label>
                 <mat-date-range-input [rangePicker]="rangePicker">
-                <input matStartDate formControlName='dateFrom' placeholder="Date arrivée">
-                <input matEndDate formControlName='dateTo' placeholder="Date Départ">
+                    <input matStartDate formControlName='dateFrom' placeholder="Date arrivée">
+                    <input matEndDate formControlName='dateTo' placeholder="Date Départ">
                 </mat-date-range-input>
                 <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
                 <mat-date-range-picker #rangePicker>
-                <mat-date-range-picker-actions>
-                    <button mat-button matDateRangePickerCancel>Annuler</button>
-                    <button mat-raised-button color="primary" matDateRangePickerApply>Confirmer</button>
-                </mat-date-range-picker-actions>
+                    <mat-date-range-picker-actions>
+                        <button mat-button matDateRangePickerCancel>Annuler</button>
+                        <button mat-raised-button color="primary" matDateRangePickerApply>Confirmer</button>
+                    </mat-date-range-picker-actions>
                 </mat-date-range-picker>
-                <mat-error *ngIf="form.get('dateFrom')?.hasError('required')">La date d'arrivée est nécessaire</mat-error>
+                <mat-error *ngIf="form.get('dateFrom')?.hasError('required')">La date d'arrivée est nécessaire
+                </mat-error>
                 <mat-error *ngIf="form.get('dateTo')?.hasError('required')">La date de départ est nécessaire</mat-error>
             </mat-form-field>
 

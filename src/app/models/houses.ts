@@ -2,7 +2,7 @@ export interface IRegisterHouses {
   title: string;
   description: string;
   address: string;
-  zipecode: number;
+  zipcode: number;
   city: string;
   status: boolean;
   nbbeds: number;
@@ -11,10 +11,10 @@ export interface IRegisterHouses {
   listeActivities: string[];
   listIdEquipements: string[],
   listidTags: string[],
-  listidPics: string[];
-  dateDebut: string,
-  dateFin: string,
-  categories: string;
+  fileUrl: string;
+  dateDebut?: string,
+  dateFin?: string,
+  categorie: string;
   idUser: string;
 }
 
@@ -22,7 +22,7 @@ export interface IHousesEntity {
   title: string;
   description: string;
   address: string;
-  zipecode: number;
+  zipcode: number;
   city: string;
   status: boolean;
   nbbeds: number;
@@ -31,10 +31,10 @@ export interface IHousesEntity {
   listeActivities: string[];
   listIdEquipements: string[],
   listidTags: string[],
-  listidPics: string[];
-  dateDebut: string,
-  dateFin: string,
-  categories: string;
+  fileUrl: string;
+  dateDebut?: string,
+  dateFin?: string,
+  categorie: string;
   idUser: string;
 }
 
