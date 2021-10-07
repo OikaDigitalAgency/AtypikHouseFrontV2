@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 
 
@@ -8,7 +8,7 @@ import { Router,ActivatedRoute } from '@angular/router';
   selector: 'app-mon-compte',
   templateUrl: './mon-compte.component.html',
   styleUrls: ['./mon-compte.component.scss'],
-  providers: [AuthService]
+  providers: [UserService]
 
   
 })
@@ -17,7 +17,7 @@ export class MonCompteComponent implements OnInit {
 
   user: any;
 
-  constructor(private readonly authService: AuthService, private readonly router: Router, 
+  constructor(private readonly userService: UserService, private readonly router: Router, 
     private readonly route: ActivatedRoute) {}
   
 
@@ -27,38 +27,12 @@ export class MonCompteComponent implements OnInit {
 
   }
 
-   getTokenUser(): void {
-     /*let id = +this.route.snapshot.params.id;
-     this.authService.getUser(id).subscribe(user => this.user = user);*/
-
-     if (this.user) {
-      let id = +this.route.snapshot.params.id;
-      this.authService.getUser(id).subscribe((tokenValue)  => {
-        const token = `Bearer ${tokenValue.token}`;
-    
-        sessionStorage.setItem('token', token)
-      }, (error) => { console.log(error) });
-    } 
-  }
-
   getUser(): void {
-    /*let id = +this.route.snapshot.params.id;
-    this.authService.getUser(id).subscribe(user => this.user = user);*/
-
-     let id = +this.route.snapshot.params.id;
-     this.authService.getUser(id).subscribe((tokenValue) => {
-       const token = `Bearer ${tokenValue.token}`;
-   
-       sessionStorage.setItem('token', token)
-       
-       this.authService.getUser(id).subscribe(user => {
-         if(user){
-           this.user = user
-          }
-        });
-      }, (error) => { console.log(error) })
-    }
+    let id = +this.route.snapshot.params.id;
+    this.userService.getUser(id).subscribe(user => this.user = user);
   }
+
+}
 
   
 

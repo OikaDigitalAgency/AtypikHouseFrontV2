@@ -33,7 +33,7 @@ export class FormCompteComponent implements OnInit {
 
   }
 
-  onSave(formValues: IRegister) {
+  /*onSave(formValues: IRegister) {
     // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
     if (this.form.valid) {
       let id = +this.route.snapshot.params.id;
@@ -41,7 +41,7 @@ export class FormCompteComponent implements OnInit {
         this.router.navigate(['/home']);
       }, (error) => { console.log(error) });
     }
-  }
+  }*/
 
 }
 
