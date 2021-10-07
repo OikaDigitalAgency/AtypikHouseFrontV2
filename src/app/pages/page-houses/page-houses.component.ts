@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HOUSE } from 'src/app/donnees/mock-houses';
 import { IHousesEntity } from 'src/app/models/houses';
 import { HousesService } from 'src/app/services/houses.service';
 

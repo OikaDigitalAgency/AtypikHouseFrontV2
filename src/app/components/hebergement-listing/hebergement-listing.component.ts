@@ -17,10 +17,7 @@ export class HebergementListingComponent implements OnInit {
 
   constructor() {}
 
-  /*appelle la requete*/
-  ngOnInit(): void {
-
-   
-  }
+  
+  ngOnInit(): void {}
 
 }
