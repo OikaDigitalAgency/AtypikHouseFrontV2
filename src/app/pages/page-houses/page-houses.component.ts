@@ -22,7 +22,6 @@ export class PageHousesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.houses = HOUSE;
     this.housesService.searchHouses(this.params.city, this.params.dateFin, this.params.nbbeds).subscribe((houses: IHousesEntity[]) => {
       this.houses = houses
     });
