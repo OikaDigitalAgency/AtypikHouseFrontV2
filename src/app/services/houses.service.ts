@@ -7,7 +7,7 @@ import { of } from 'rxjs'; // RxJS 6, à utiliser.
 
 
 
-const AUTH_API = 'http://localhost:8000';
+const AUTH_API = 'https://localhost:8000';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -38,7 +38,7 @@ export class HousesService {
   }
 
 
-  constructor(private readonly http: HttpClient) { }
+  constructor(private readonly https: HttpClient) { }
 
   /**
   * Permet d'enregistrer un nouveau house 
@@ -65,7 +65,7 @@ export class HousesService {
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
-    return this.http.post(`${AUTH_API}/api/houses`, body, httpOptions);
+    return this.https.post(`${AUTH_API}/api/houses`, body, httpOptions);
   }
 
   /**
@@ -93,24 +93,21 @@ export class HousesService {
       idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
-    return this.http.put(`${AUTH_API}/api/houses`, body, httpOptions);
+    return this.https.put(`${AUTH_API}/api/houses`, body, httpOptions);
   }
 
   /**
    * Permet de récupérer la liste des houses.
    */
   getAllHouses(): Observable<any> {
-    return this.http.get(`${AUTH_API}/api/houses`, httpOptions);
-  }
-
-
-  /*recupere la liste des houses fictif*/
-  getHouses(): Observable<IHousesEntity[]> {
-    return this.http.get<IHousesEntity[]>(this.houseUrl)
-      .pipe(
-        tap(_ => this.log('fetched houses')),
-        catchError(this.handleError<IHousesEntity[]>('getHouses', []))
-      );
+    return this.https.get<IHousesEntity[]>(`${AUTH_API}/api/houses`, httpOptions).pipe(
+      tap(items => {
+        items.map(item => {
+          item.fileUrl = `${AUTH_API}${item.fileUrl}`;
+        });
+      }),
+      catchError(this.handleError<IHousesEntity[]>('getAllHouses', []))
+    );
   }
 
   /**
@@ -124,7 +121,7 @@ export class HousesService {
   searchHouses(city: string, dateFin: Date, nbbeds: number): Observable<any> {
     // dans notre requête, on a des valeurs "non conformes". l'idée c'est de transformer la route en url.
 
-    return this.http.get<IHousesEntity[]>(`${AUTH_API}/api/houses?city=${city}&dateFin[after]=${dateFin}&nbbeds[gte]=${nbbeds}&status=true`).pipe(
+    return this.https.get<IHousesEntity[]>(`${AUTH_API}/api/houses?city=${city}&dateFin[after]=${dateFin}&nbbeds[gte]=${nbbeds}&status=true`).pipe(
       tap(items => {
         items.map(item => {
           item.fileUrl = `${AUTH_API}${item.fileUrl}`;
@@ -138,8 +135,20 @@ export class HousesService {
    * Permet de supprimer la liste des houses.
    */
   deleteAllHouses(): Observable<any> {
-    return this.http.delete(`${AUTH_API}/api/houses`, httpOptions);
+    return this.https.delete(`${AUTH_API}/api/houses`, httpOptions);
   }
+
+
+  /*******************************/
+
+    /*recupere la liste des houses fictif*/
+    getHouses(): Observable<IHousesEntity[]> {
+      return this.https.get<IHousesEntity[]>(this.houseUrl)
+        .pipe(
+          tap(_ => this.log('fetched houses')),
+          catchError(this.handleError<IHousesEntity[]>('getHouses', []))
+        );
+    }
 
 
 }

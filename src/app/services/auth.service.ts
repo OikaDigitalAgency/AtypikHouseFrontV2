@@ -7,7 +7,7 @@ import { ILogin, ILoginEntity } from '../models/login';
 const AUTH_API = 'https://localhost:8000';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*', 'Access-Control-Allow-Methods':'GET,POST,OPTIONS,DELETE,PUT'})
 };
 
 @Injectable({
@@ -47,37 +47,5 @@ export class AuthService {
 
     return this.https.post(`${AUTH_API}/register`, body, httpOptions);
   }
-
-  /**
-   * Permet d'afficher un user.
-   */
-   getUser(id: number): Observable<any> {
-    return this.https.get(`${AUTH_API}/api/profile/${id}`, httpOptions);
-  }
-
- /**
-   * Permet de mettre a jour un user.
-   */
-  update(registerValues: IRegister, id: number): Observable<any> {
-    const body: IUserEntity = {
-      email: registerValues.email,
-      plainPassword: registerValues.password, 
-      lastname: registerValues.lastName,
-      firstname: registerValues.firstName,
-      zipcode: registerValues.zipCode,
-      address: registerValues.address,
-      phone: registerValues.phoneNumber,
-      city: registerValues.city,
-    };
-
-    return this.https.put(`${AUTH_API}/api/users/${id}`, body, httpOptions);
-  }
-
-   /**
-   * Permet de supprimer un user.
-   */
-    deleteUser(id: number): Observable<any> {
-      return this.https.delete(`${AUTH_API}/api/users/${id}`, httpOptions);
-    }
-
+ 
 }

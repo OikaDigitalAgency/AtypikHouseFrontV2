@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { IUserEntity } from 'src/app/models/register';
 
 
 
@@ -8,57 +9,31 @@ import { Router,ActivatedRoute } from '@angular/router';
   selector: 'app-mon-compte',
   templateUrl: './mon-compte.component.html',
   styleUrls: ['./mon-compte.component.scss'],
-  providers: [AuthService]
+  providers: [UserService]
 
   
 })
 export class MonCompteComponent implements OnInit {
   
 
-  user: any;
+  params!: any;
 
-  constructor(private readonly authService: AuthService, private readonly router: Router, 
-    private readonly route: ActivatedRoute) {}
+  constructor(private readonly userService: UserService, private readonly route: ActivatedRoute) {
+      this.route.params.subscribe(params => {
+        this.params = params;
+      });
+    }
+
+    users!: IUserEntity;
   
-
   ngOnInit(): void {
 
-    this.getUser();
-
+    let id = +this.route.snapshot.params.id;
+    this.userService.getUser(id).subscribe((users: IUserEntity) => {
+      this.users = users
+    });
   }
-
-   getTokenUser(): void {
-     /*let id = +this.route.snapshot.params.id;
-     this.authService.getUser(id).subscribe(user => this.user = user);*/
-
-     if (this.user) {
-      let id = +this.route.snapshot.params.id;
-      this.authService.getUser(id).subscribe((tokenValue)  => {
-        const token = `Bearer ${tokenValue.token}`;
-    
-        sessionStorage.setItem('token', token)
-      }, (error) => { console.log(error) });
-    } 
-  }
-
-  getUser(): void {
-    /*let id = +this.route.snapshot.params.id;
-    this.authService.getUser(id).subscribe(user => this.user = user);*/
-
-     let id = +this.route.snapshot.params.id;
-     this.authService.getUser(id).subscribe((tokenValue) => {
-       const token = `Bearer ${tokenValue.token}`;
-   
-       sessionStorage.setItem('token', token)
-       
-       this.authService.getUser(id).subscribe(user => {
-         if(user){
-           this.user = user
-          }
-        });
-      }, (error) => { console.log(error) })
-    }
-  }
+}
 
   
 

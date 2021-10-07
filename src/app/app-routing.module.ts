@@ -11,7 +11,6 @@ import { PageAjoutHebergementComponent } from './pages/page-ajout-hebergement/pa
 import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.component';
 import { MonCompteComponent } from './components/mon-compte/mon-compte.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
-import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { PageHouseDetailsComponent } from './pages/page-house-details/page-house-details.component';
 import { FormCompteComponent } from './components/form-compte/form-compte.component';
 
@@ -23,7 +22,6 @@ const routes: Routes = [
   { path: 'contact', component: PageContactComponent },
   { path: 'cgu', component: CguComponent },
   { path: 'hebergement', component: PageHousesComponent },
-  { path: 'carrousel', component: CarrouselComponent},
   { path: 'ajout-hebergement', component: PageAjoutHebergementComponent },
   { path: 'dashboard', component: PageDashboardComponent },
   { path: 'dashboard/mon-compte', component: MonCompteComponent },

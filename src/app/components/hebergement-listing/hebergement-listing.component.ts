@@ -15,11 +15,9 @@ export class HebergementListingComponent implements OnInit {
   @Input() house!: IHousesEntity;
 
 
-  constructor() {
-  }
+  constructor() {}
 
-  /*appelle la requete*/
-  ngOnInit(): void {
-  }
+  
+  ngOnInit(): void {}
 
 }
