@@ -46,6 +46,7 @@ export class HousesService {
   */
   registerHouse(registerValues: IRegisterHouses): Observable<any> {
     const body: IHousesEntity = {
+      id: registerValues.id,
       title: registerValues.title,
       description: registerValues.description,
       address: registerValues.address,
@@ -74,6 +75,7 @@ export class HousesService {
    */
   update(registerValues: IRegisterHouses): Observable<any> {
     const body: IHousesEntity = {
+      id: registerValues.id,
       title: registerValues.title,
       description: registerValues.description,
       address: registerValues.address,
@@ -99,6 +101,8 @@ export class HousesService {
   /**
    * Permet de récupérer la liste des houses.
    */
+
+
   getAllHouses(): Observable<any> {
     return this.https.get<IHousesEntity[]>(`${AUTH_API}/api/houses`, httpOptions).pipe(
       tap(items => {
@@ -107,6 +111,18 @@ export class HousesService {
         });
       }),
       catchError(this.handleError<IHousesEntity[]>('getAllHouses', []))
+    );
+  }
+
+  /*affiche une seul house*/ 
+  getHouse(id: number): Observable<any> {
+    return this.https.get<IHousesEntity[]>(`${AUTH_API}/api/houses/${id}`, httpOptions).pipe(
+      tap(items => {
+        items.map(item => {
+          item.fileUrl = `${AUTH_API}${item.fileUrl}`;
+        });
+      }),
+      catchError(this.handleError<IHousesEntity[]>('getHouse', []))
     );
   }
 
@@ -139,16 +155,7 @@ export class HousesService {
   }
 
 
-  /*******************************/
 
-    /*recupere la liste des houses fictif*/
-    getHouses(): Observable<IHousesEntity[]> {
-      return this.https.get<IHousesEntity[]>(this.houseUrl)
-        .pipe(
-          tap(_ => this.log('fetched houses')),
-          catchError(this.handleError<IHousesEntity[]>('getHouses', []))
-        );
-    }
 
 
 }

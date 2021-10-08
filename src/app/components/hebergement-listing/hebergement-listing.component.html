@@ -1,11 +1,11 @@
-<div class="container-card-house">
-	<mat-card class="card-house">
+<div class="container-card-house" >
+	<mat-card class="card-house" >
 
 		<mat-card-header class="card-header-house">
-			<img mat-card-avatar class="example-header-image" src="{{house.fileUrl}}" alt="">
+			<img mat-card-avatar class="example-header-image" src="{{house.fileUrl}}" alt="" >
 			<mat-card-title>{{house.title}}</mat-card-title>
 		</mat-card-header>
-
+		
 
 		<img mat-card-image class="example-header-image container-image" src="{{house.fileUrl}}" alt="">
 
@@ -30,6 +30,8 @@
 					<mat-chip *ngFor="let activite of house.listeActivities | slice:0:3">{{activite}}</mat-chip>
 				</mat-chip-list>
 			</mat-list>
+			
 		</mat-card-content>
 	</mat-card>
+	<button mat-raised-button type="button" class="button" (click)="selectHouse(house)">détails</button>
 </div>

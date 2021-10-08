@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'dashboard', component: PageDashboardComponent },
   { path: 'dashboard/mon-compte', component: MonCompteComponent },
   { path: 'dashboard/reservations', component: ReservationsComponent },
-  { path: 'house-details', component: PageHouseDetailsComponent },
+  { path: 'house/:id', component: PageHouseDetailsComponent },
   { path: 'form-compte', component: FormCompteComponent},
   { path: '**', component: HomeComponent }
 ];

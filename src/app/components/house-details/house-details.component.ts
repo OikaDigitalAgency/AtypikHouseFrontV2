@@ -1,34 +1,32 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HousesService } from 'src/app/services/houses.service';
+import { ActivatedRoute } from '@angular/router';
 import { IHousesEntity } from 'src/app/models/houses';
+
 
 @Component({
   selector: 'app-house-details',
   templateUrl: './house-details.component.html',
   styleUrls: ['./house-details.component.scss'],
-  providers: [HousesService]
 })
 export class HouseDetailsComponent implements OnInit {
-  @Input() house!: IHousesEntity;
-  form!: FormGroup;
 
+  
+  
 
-  constructor(private readonly fb: FormBuilder) {
-    this.createForm();
+  constructor(private readonly housesService: HousesService, private readonly route: ActivatedRoute) {
+    
    }
 
 
-  createForm() {
-    this.form = this.fb.group({
-      dateTo: ['', Validators.required],
-      dateFrom: ['', Validators.required],
-      nbPerson: ['', [Validators.required, Validators.min(1)]],
-      nbChildren: [''],
-    });
-  }
+   house!: IHousesEntity;
 
   ngOnInit(): void {
+
+    let id = +this.route.snapshot.params.id;
+    this.housesService.getHouse(id).subscribe((house: IHousesEntity) => {
+      this.house = house
+    });
   }
 
 }
