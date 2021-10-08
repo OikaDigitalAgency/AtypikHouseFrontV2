@@ -22,8 +22,6 @@ const httpOptions = {
 })
 export class HousesService {
 
-  private houseUrl = 'api/home';  // URL to web api
-
   private log(log: string) {
     console.info(log);
   }
@@ -101,7 +99,7 @@ export class HousesService {
   /**
    * Permet de récupérer la liste des houses.
    */
-
+ 
 
   getAllHouses(): Observable<any> {
     return this.https.get<IHousesEntity[]>(`${AUTH_API}/api/houses`, httpOptions).pipe(
@@ -114,7 +112,15 @@ export class HousesService {
     );
   }
 
+
+  
+
   /*affiche une seul house*/ 
+  /**
+   * @param id 
+   * @returns 
+   */
+
   getHouse(id: number): Observable<any> {
     return this.https.get<IHousesEntity[]>(`${AUTH_API}/api/houses/${id}`, httpOptions).pipe(
       tap(items => {
