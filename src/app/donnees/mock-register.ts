@@ -2,7 +2,7 @@ import { IUserEntity } from "../models/register";
 /*donnée fictif de comments */
 
 export const USER: IUserEntity[] = [
-    {
+    {   id: 1,
         email: "q.vilcoq@gmail.com",
         firstname: "vilcoque",
         lastname: "quentin",
@@ -14,6 +14,7 @@ export const USER: IUserEntity[] = [
     },
 
     {
+        id: 2,
         email: "j.vilcoq@gmail.com",
         firstname: "vilcoque",
         lastname: "janick",
@@ -25,6 +26,7 @@ export const USER: IUserEntity[] = [
     },
 
     {
+        id: 3,
         email: "a.imbert@gmail.com",
         firstname: "imbert",
         lastname: "alison",
@@ -36,6 +38,7 @@ export const USER: IUserEntity[] = [
     },
 
     {
+        id: 4,
         email: "m.goncalves@gmail.com",
         firstname: "goncalves",
         lastname: "mariline",

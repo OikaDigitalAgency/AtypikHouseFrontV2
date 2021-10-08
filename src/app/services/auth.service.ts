@@ -7,7 +7,7 @@ import { ILogin, ILoginEntity } from '../models/login';
 const AUTH_API = 'https://localhost:8000';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*', 'Access-Control-Allow-Methods':'GET,POST,OPTIONS,DELETE,PUT'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'})
 };
 
 @Injectable({
@@ -35,6 +35,7 @@ export class AuthService {
    */
   register(registerValues: IRegister): Observable<any> {
     const body: IUserEntity = {
+      id:registerValues.zipCode,
       email: registerValues.email,
       plainPassword: registerValues.password, 
       lastname: registerValues.lastName,

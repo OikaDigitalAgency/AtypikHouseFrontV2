@@ -1,4 +1,5 @@
 export interface IRegisterHouses {
+  id : number,
   title: string;
   description: string;
   address: string;
@@ -19,6 +20,7 @@ export interface IRegisterHouses {
 }
 
 export interface IHousesEntity {
+  id : number,
   title: string;
   description: string;
   address: string;

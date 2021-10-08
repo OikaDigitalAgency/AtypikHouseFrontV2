@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ILogin } from 'src/app/models/login';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { IUserEntity } from 'src/app/models/register';
 
 
 @Component({
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  
   onSave(formValues: ILogin) {
     // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
     if (this.form.valid) {
@@ -33,6 +35,8 @@ export class LoginComponent implements OnInit {
 
       }, (error) => { console.log(error) });
     }
+ 
   }
+
 
 }

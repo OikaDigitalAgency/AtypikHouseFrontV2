@@ -3,6 +3,7 @@ import { IHousesEntity } from "../models/houses";
 
 export const HOUSE: IHousesEntity[] = [
     {
+        id: 1,
         title: "Tipi",
         description: "Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.",
         address: "44 rue de paris",
@@ -22,6 +23,7 @@ export const HOUSE: IHousesEntity[] = [
         listidTags: ["test"]
     },
     {
+        id: 2,
         title: "tente",
         description: "jolie typi",
         address: "44 rue de paris",
@@ -41,6 +43,7 @@ export const HOUSE: IHousesEntity[] = [
         listidTags: ["test"]
     },
     {
+        id: 3,
         title: "cabane dans les arbres",
         description: "jolie typi",
         address: "44 rue de paris",
@@ -60,6 +63,7 @@ export const HOUSE: IHousesEntity[] = [
         listidTags: ["test"]
     },
     {
+        id: 4,
         title: "yourte",
         description: "jolie typi",
         address: "44 rue de paris",
@@ -79,6 +83,7 @@ export const HOUSE: IHousesEntity[] = [
         listidTags: ["test"]
     },
     {
+        id: 5,
         title: "cabane",
         description: "jolie typi",
         address: "44 rue de paris",
@@ -98,6 +103,7 @@ export const HOUSE: IHousesEntity[] = [
         listidTags: ["test"]
     },
     {
+        id: 6,
         title: "tente",
         description: "jolie typi",
         address: "44 rue de paris",
