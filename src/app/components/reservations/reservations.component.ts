@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BOOKING_END } from 'src/app/donnees/mock-booking-end';
 import { BOOKING_START } from 'src/app/donnees/mock-booking-start';
 import { HOUSE } from 'src/app/donnees/mock-houses';
