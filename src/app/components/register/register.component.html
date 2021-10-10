@@ -53,7 +53,7 @@
 	</mat-form-field>
 
 	<mat-form-field class="register-full-width" appearance="outline">
-		<mat-label>Téléphonne</mat-label>
+		<mat-label>Téléphone</mat-label>
 		<input matInput formControlName='phoneNumber'>
 		<mat-error *ngIf="form.get('phoneNumber')?.hasError('required')">Téléphonne Requis</mat-error>
 		<mat-error *ngIf="form.get('phoneNumber')?.hasError('pattern')">Le téléphonne doit contenir que des chiffres
