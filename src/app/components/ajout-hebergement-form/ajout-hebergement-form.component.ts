@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { IRegisterHouses } from 'src/app/models/houses';
+import { IRegisterFile } from 'src/app/models/file';
 import { HousesService } from 'src/app/services/houses.service';
 
 export interface Activité {
@@ -15,6 +16,11 @@ export interface Activité {
   styleUrls: ['./ajout-hebergement-form.component.scss']
 })
 export class AjoutHebergementFormComponent implements OnInit {
+  // Variable to store shortLink from api response
+  shortLink: string = "";
+  loading: boolean = false; // Flag variable
+ // file: File = null; // Variable to store file
+
   form!: FormGroup;
 
   // Fonction pour upload une image
@@ -68,16 +74,23 @@ export class AjoutHebergementFormComponent implements OnInit {
     }
   }
 
-  onSave(formValues: IRegisterHouses) {
-    // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
-    if (this.form.valid) {
-      this.housesService.registerHouse(formValues).subscribe((data) => {
-        /*this.router.navigate(['/home']);*/
-      }, (error) => { console.log(error) });
+  /*onSave(formValues: IRegisterHouses) {
+    this.loading = !this.loading;
+    console.log(this.file);
+    this.fileUploadService.upload(this.file).subscribe(
+      (event: any) => {
+        if (typeof (event) === 'object') {
+          // Short link via api response
+          this.shortLink = event.link;
+          this.loading = false; // Flag variable
+        }
+        // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
+        if (this.form.valid) {
+          this.housesService.registerHouse(formValues).subscribe((data) => {
+
+          }, (error) => { console.log(error) });
+        }
+      }
     }
-  }
-
-
-
+  }*/
 }
-

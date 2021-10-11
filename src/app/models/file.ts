@@ -1,6 +1,8 @@
 export interface IRegisterFile {
-    file: {};
-    fileUrl: string,
-    createdAt: string,
-    updatedAt: string, }
-  
+    file: string,
+    idUser: string; }
+
+
+export interface IFileEntity {
+    file: string,
+    idUser: string; }
