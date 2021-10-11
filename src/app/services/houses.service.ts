@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IRegisterHouses, IHousesEntity } from '../models/houses';
+import { IRegisterFile, IFileEntity } from '../models/file';
 import { catchError, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs'; // RxJS 6, à utiliser.
 
@@ -112,9 +113,6 @@ export class HousesService {
     );
   }
 
-
-  
-
   /*affiche une seul house*/ 
   /**
    * @param id 
@@ -161,7 +159,18 @@ export class HousesService {
   }
 
 
+  /**
+   * @param id 
+   * @returns 
+   */
 
+  registerHouseFile(registerValues: IRegisterFile, id: number): Observable<any> {
+    const body: IFileEntity = {
+      file: registerValues.file,
+      idUser: `\/api\/users\/${registerValues.idUser}`,
+    };
 
+    return this.https.post(`${AUTH_API}/api/houses/${id}/image`, body, httpOptions);
+  }
 
 }
