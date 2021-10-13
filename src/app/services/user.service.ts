@@ -5,7 +5,7 @@ import { IRegister, IUserEntity } from '../models/register';
 
 
 
-const AUTH_API = 'https://localhost:8000';
+const AUTH_API = 'http://localhost:8000';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json', 
@@ -20,20 +20,18 @@ const httpOptions = {
 export class UserService {
 
   constructor(private readonly https: HttpClient) { }
-
-
-
   /**
    * Permet d'afficher un user.
+   * en le recherchant via son email.
    */
 
   /**
-   * @param id 
+   * @param email
    * @returns 
    */
 
-   getUser(id: number): Observable<any> {
-    return this.https.get(`${AUTH_API}/api/profile/${id}`, httpOptions);
+   getUser(email: string): Observable<any> {
+    return this.https.get(`${AUTH_API}/api/user/${email}`, httpOptions);
   }
 
 }

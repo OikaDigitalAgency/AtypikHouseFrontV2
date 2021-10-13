@@ -1,3 +1,36 @@
-<section class="list-container">
-    <app-house-details  class="house-details"></app-house-details>
+<section class="list-container" *ngIf="house">
+    <div class="container-card-house" >
+        <mat-card class="card-house" >
+    
+            <mat-card-header class="card-header-house">
+                <img mat-card-avatar class="example-header-image"  src="{{house.fileUrl}}" alt="" >
+                <mat-card-title>{{house.title}}</mat-card-title>
+            </mat-card-header>
+            
+    
+            <img mat-card-image class="example-header-image container-image" src="{{house.fileUrl}}" alt="">
+    
+            <mat-card-content class="content-text">
+                <p>
+                    {{house.description}}
+                </p>
+            </mat-card-content>
+            <mat-card-content>
+    
+                <mat-list role="list" class="list-house">
+                    <mat-list-item>
+                        <div class="container-list">
+                            <div class="list-item" role="listitem">
+                                <mat-icon aria-hidden="false" aria-label="Example home icon">bed</mat-icon>
+                                {{house.nbbeds}}
+                            </div>
+                            <div class="price" role="listitem" *ngIf="house">{{house.price}}€ / Nuit</div>
+                        </div>
+                    </mat-list-item>
+                    
+                </mat-list>
+                
+            </mat-card-content>
+        </mat-card>
+    </div>
 </section>

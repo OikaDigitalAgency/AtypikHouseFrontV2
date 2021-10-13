@@ -21,25 +21,8 @@ export class PageHousesComponent implements OnInit {
   houses!: IHousesEntity[];
 
   ngOnInit(): void {
-
-    
     this.housesService.searchHouses(this.params.city, this.params.dateFin, this.params.nbbeds).subscribe((houses: IHousesEntity[]) => {
       this.houses = houses
     });
-    
-    this.housesService.getAllHouses().subscribe((houses: IHousesEntity[]) => {
-      this.houses = houses
-    });
-    
-
   }
-
-/*Permet de selectionner une house pour aller sur la page détaillé*/ 
-  selectHouse(houses: IHousesEntity){
-    console.log("C'est la house " + houses.id);
-    // proprieter du lien 
-    let link = ['/house', houses.id];
-    this.router.navigate(link);
-  }
-
 }

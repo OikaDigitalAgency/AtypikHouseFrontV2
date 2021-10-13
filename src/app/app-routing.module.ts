@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'hebergement', component: PageHousesComponent },
   { path: 'ajout-hebergement', component: PageAjoutHebergementComponent },
   { path: 'dashboard', component: PageDashboardComponent },
-  { path: 'dashboard/mon-compte', component: MonCompteComponent },
+  { path: 'dashboard/mon-compte/:email', component: MonCompteComponent },
   { path: 'dashboard/reservations', component: ReservationsComponent },
   { path: 'house/:id', component: PageHouseDetailsComponent },
   { path: 'form-compte', component: FormCompteComponent},

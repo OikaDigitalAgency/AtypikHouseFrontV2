@@ -15,7 +15,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 
-
 import { SearchComponent } from './components/search/search.component';
 
 import { ContentContactPageComponent } from './components/content-contact-page/content-contact-page.component';
@@ -45,7 +44,6 @@ import { PageDashboardComponent } from './pages/page-dashboard/page-dashboard.co
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MonCompteComponent } from './components/mon-compte/mon-compte.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
-import { HouseDetailsComponent } from './components/house-details/house-details.component';
 import { PageHouseDetailsComponent } from './pages/page-house-details/page-house-details.component';
 import { FormCompteComponent } from './components/form-compte/form-compte.component';
 
@@ -75,10 +73,8 @@ import { FormCompteComponent } from './components/form-compte/form-compte.compon
     DashboardComponent,
     MonCompteComponent,
     ReservationsComponent,
-    HouseDetailsComponent,
     PageHouseDetailsComponent,
     FormCompteComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -100,9 +96,6 @@ import { FormCompteComponent } from './components/form-compte/form-compte.compon
     MatCardModule,
     MatListModule,
     MatTabsModule,
-    
-    
-    
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent],

@@ -8,7 +8,7 @@ import { of } from 'rxjs'; // RxJS 6, à utiliser.
 
 
 
-const AUTH_API = 'https://localhost:8000';
+const AUTH_API = 'http://localhost:8000';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -100,8 +100,6 @@ export class HousesService {
   /**
    * Permet de récupérer la liste des houses.
    */
- 
-
   getAllHouses(): Observable<any> {
     return this.https.get<IHousesEntity[]>(`${AUTH_API}/api/houses`, httpOptions).pipe(
       tap(items => {
@@ -113,20 +111,18 @@ export class HousesService {
     );
   }
 
-  /*affiche une seul house*/ 
+  /* Affiche UNE SEULE house */ 
   /**
    * @param id 
    * @returns 
    */
 
   getHouse(id: number): Observable<any> {
-    return this.https.get<IHousesEntity[]>(`${AUTH_API}/api/houses/${id}`, httpOptions).pipe(
-      tap(items => {
-        items.map(item => {
-          item.fileUrl = `${AUTH_API}${item.fileUrl}`;
-        });
+    return this.https.get<IHousesEntity>(`${AUTH_API}/api/houses/${id}`).pipe(
+      tap(item => {
+        item.fileUrl = `${AUTH_API}${item.fileUrl}`;
       }),
-      catchError(this.handleError<IHousesEntity[]>('getHouse', []))
+      catchError(this.handleError<IHousesEntity>('getHouse'))
     );
   }
 

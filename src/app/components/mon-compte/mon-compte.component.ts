@@ -18,18 +18,12 @@ export class MonCompteComponent implements OnInit {
 
   params!: any;
 
-  constructor(private readonly userService: UserService, private readonly route: ActivatedRoute) {
-      this.route.params.subscribe(params => {
-        this.params = params;
-      });
-    }
+  constructor(private readonly userService: UserService, private readonly route: ActivatedRoute) {}
 
     users!: IUserEntity;
   
   ngOnInit(): void {
-
-    let id = +this.route.snapshot.params.id;
-    this.userService.getUser(id).subscribe((users: IUserEntity) => {
+    this.userService.getUser(this.route.snapshot.params.email).subscribe((users: IUserEntity) => {
       this.users = users
     });
   }

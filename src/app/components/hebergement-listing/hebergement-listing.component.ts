@@ -15,17 +15,12 @@ import { Router } from '@angular/router';
 export class HebergementListingComponent implements OnInit {
   @Input() house!: IHousesEntity;
 
-
   constructor(private readonly router: Router) {}
-
   
   ngOnInit(): void {}
 
-  selectHouse(house: IHousesEntity){
-
-    // proprieter du lien 
-    let link = ['/house', house.id];
-    this.router.navigate(link);
+  selectHouse(house: IHousesEntity) {
+    this.router.navigate(['/house', house.id]);
   }
 
 }

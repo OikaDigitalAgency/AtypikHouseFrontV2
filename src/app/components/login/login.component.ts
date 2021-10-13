@@ -28,10 +28,9 @@ export class LoginComponent implements OnInit {
     // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
     if (this.form.valid) {
       this.authService.login(formValues).subscribe((tokenValue) => {
-        const token = `Bearer ${tokenValue.token}`;
-        sessionStorage.setItem('token', token);
-        this.router.navigate(['/dashboard/mon-compte']);
-
+        sessionStorage.setItem('token', `Bearer ${tokenValue.token}`);
+        sessionStorage.setItem('userEmail', this.form.value.email);
+        this.router.navigate([`/dashboard/mon-compte/${sessionStorage.getItem('userEmail')}`]);
       }, (error) => { console.log(error) });
     }
  

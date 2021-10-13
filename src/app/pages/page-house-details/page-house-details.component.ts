@@ -9,13 +9,23 @@ import { HousesService } from 'src/app/services/houses.service';
   styleUrls: ['./page-house-details.component.scss']
 })
 export class PageHouseDetailsComponent implements OnInit {
- 
- 
-
   constructor(private readonly route: ActivatedRoute, private readonly housesService: HousesService) { }
+  
+  house!: IHousesEntity;
 
+  // --- "click"
+  // --- link => "houses/:id" PageHouseDetailsComponent
+  // --- let id = +this.route.snapshot.params.id
+  // --- getHouse 
+  // --- ? 
 
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.route.snapshot.params.id);
+    let id = Number(this.route.snapshot.params.id);
+    this.housesService.getHouse(id).subscribe((house: IHousesEntity) => {
+      console.log(house)
+      this.house = house
+    });
+  }
 
 }
