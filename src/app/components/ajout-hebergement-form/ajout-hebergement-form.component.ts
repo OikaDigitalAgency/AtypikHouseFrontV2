@@ -5,6 +5,8 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { IRegisterHouses } from 'src/app/models/houses';
 import { IRegisterFile } from 'src/app/models/file';
 import { HousesService } from 'src/app/services/houses.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 export interface Activité {
   name: string;
@@ -29,7 +31,7 @@ export class AjoutHebergementFormComponent implements OnInit {
   }
 
 
-  constructor(private readonly fb: FormBuilder,private readonly housesService: HousesService) { }
+  constructor(private readonly fb: FormBuilder,private readonly housesService: HousesService, private readonly route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -74,23 +76,25 @@ export class AjoutHebergementFormComponent implements OnInit {
     }
   }
 
-  /*onSave(formValues: IRegisterHouses) {
-    this.loading = !this.loading;
-    console.log(this.file);
-    this.fileUploadService.upload(this.file).subscribe(
-      (event: any) => {
-        if (typeof (event) === 'object') {
-          // Short link via api response
-          this.shortLink = event.link;
-          this.loading = false; // Flag variable
-        }
-        // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
-        if (this.form.valid) {
-          this.housesService.registerHouse(formValues).subscribe((data) => {
+  
 
-          }, (error) => { console.log(error) });
-        }
-      }
+  async onSave(formValues: IRegisterHouses, formValues2: IRegisterFile) {
+    // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
+    if (this.form.valid) {
+      
+      const res1 = await this.housesService.registerHouse(formValues).subscribe((data) => {
+        
+      }, (error) => { console.log(error) });
+      
+      let id = Number(this.route.snapshot.params.id);
+      const res2 = await this.housesService.registerHouseFile(formValues2, id).subscribe((data) => {
+        
+        let res =  Promise.all([res1, res2]);
+      }, (error) => { console.log(error) });
     }
-  }*/
+    
+  }
 }
+  
+    
+

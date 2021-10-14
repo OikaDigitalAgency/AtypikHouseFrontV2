@@ -1,28 +1,12 @@
-form{
-    margin: 2% 0% 2% 0%;
-}
+.example-card {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    
 
-h3{
-    text-align: center;
-}
-
-mat-form-field{
-    width: 300px;
-    display: block;
-    margin : auto auto auto 50%;
-}
-
-button{
-    border: none;
-    color: white;
-    background-color: #118041;
-    width: 150px;
-    min-height: 50px;
-    display: block;
-    margin : auto;
-}
-
-button:hover {
-	cursor: pointer;
-    background-color: rgb(23, 156, 63);
+.list-container{  
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
 }
