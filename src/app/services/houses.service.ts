@@ -39,6 +39,8 @@ export class HousesService {
 
   constructor(private readonly https: HttpClient) { }
 
+  
+
   /**
   * Permet d'enregistrer un nouveau house 
   * sur l'application
@@ -67,6 +69,8 @@ export class HousesService {
 
     return this.https.post(`${AUTH_API}/api/houses`, body, httpOptions);
   }
+
+ 
 
   /**
    * Permet de modifier les houses 
