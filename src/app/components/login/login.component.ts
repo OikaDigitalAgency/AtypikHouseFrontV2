@@ -25,12 +25,15 @@ export class LoginComponent implements OnInit {
 
   
   onSave(formValues: ILogin) {
+    const obj = {
+      email: formValues.email,
+    }
     // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
     if (this.form.valid) {
       this.authService.login(formValues).subscribe((tokenValue) => {
         sessionStorage.setItem('token', `Bearer ${tokenValue.token}`);
         sessionStorage.setItem('userEmail', this.form.value.email);
-        this.router.navigate([`/dashboard/mon-compte/${sessionStorage.getItem('userEmail')}`]);
+        this.router.navigate([`/dashboard/mon-compte/${sessionStorage.getItem('userEmail')}`, obj]);
       }, (error) => { console.log(error) });
     }
  
