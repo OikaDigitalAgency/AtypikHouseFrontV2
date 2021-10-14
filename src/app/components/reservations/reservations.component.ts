@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BOOKING_END } from 'src/app/donnees/mock-booking-end';
-import { BOOKING_START } from 'src/app/donnees/mock-booking-start';
-import { HOUSE } from 'src/app/donnees/mock-houses';
-import { IBookingEntity } from 'src/app/models/booking';
 import { IHousesEntity } from 'src/app/models/houses';
-import { BookingService } from 'src/app/services/booking.service';
+import { HousesService } from 'src/app/services/houses.service';
 
 @Component({
   selector: 'app-reservations',
@@ -14,25 +10,18 @@ import { BookingService } from 'src/app/services/booking.service';
 })
 export class ReservationsComponent implements OnInit {
 
-  params!: any;
 
-  constructor(private readonly route: ActivatedRoute, private readonly bookingService: BookingService) {
-    this.route.params.subscribe(params => {
-      this.params = params;
-    });
-  }
+  constructor(private readonly route: ActivatedRoute, private readonly housesService: HousesService) { }
 
-  houses!: IHousesEntity[];
+  house!: IHousesEntity;
 
-  bookings_end!: IBookingEntity[];
-  bookings_start!: IBookingEntity[];
 
   ngOnInit(): void {
-    this.bookings_end = BOOKING_END;
-    this.bookings_start = BOOKING_START;
-    this.houses = HOUSE;
-    // this.housesService.searchHouses(this.params.city, this.params.dateFin, this.params.nbbeds).subscribe((houses: IHousesEntity[]) => this.houses = houses);
-    // requête ici
+    console.log(this.route.snapshot.params.id);
+    let id = Number(this.route.snapshot.params.id);
+    this.housesService.getHouse(id).subscribe((house: IHousesEntity) => {
+      console.log(house)
+      this.house = house
+    });
   }
-
 }
