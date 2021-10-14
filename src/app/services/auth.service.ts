@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { IRegister, IUserEntity } from '../models/register';
 import { ILogin, ILoginEntity } from '../models/login';
 
-const AUTH_API = 'http://localhost:8000';
+const AUTH_API = 'https://localhost:8000';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin':'*'})
