@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { ActivatedRoute } from '@angular/router';
 import { IHousesEntity } from 'src/app/models/houses';
 import { HousesService } from 'src/app/services/houses.service';
