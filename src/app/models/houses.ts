@@ -9,7 +9,7 @@ export interface IRegisterHouses {
   nbbeds: number;
   price: number;
   tax: number;
-  listeActivities: string[];
+  listidActivities: string[];
   listIdEquipements: string[],
   listidTags: string[],
   fileUrl: string;
@@ -30,7 +30,7 @@ export interface IHousesEntity {
   nbbeds: number;
   price: number;
   tax: number;
-  listeActivities: string[];
+  listidActivities: string[];
   listIdEquipements: string[],
   listidTags: string[],
   fileUrl: string;

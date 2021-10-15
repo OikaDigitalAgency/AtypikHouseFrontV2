@@ -1,22 +1,21 @@
 <section class="list-container" *ngIf="house">
     <div class="container-card-house" >
         <mat-card class="card-house" >
-    
             <mat-card-header class="card-header-house">
-                <img mat-card-avatar class="example-header-image"  src="{{house.fileUrl}}" alt="" >
                 <mat-card-title>{{house.title}}</mat-card-title>
             </mat-card-header>
-            
-    
             <img mat-card-image class="example-header-image container-image" src="{{house.fileUrl}}" alt="">
     
             <mat-card-content class="content-text">
                 <p>
-                    {{house.description}}
+                    {{house.description}}  
                 </p>
             </mat-card-content>
+            <div class="list-lieu" role="listitem">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">add_location</mat-icon>
+                {{house.address}} {{house.zipcode}} {{house.city}}
+            </div>
             <mat-card-content>
-    
                 <mat-list role="list" class="list-house">
                     <mat-list-item>
                         <div class="container-list">
@@ -24,12 +23,13 @@
                                 <mat-icon aria-hidden="false" aria-label="Example home icon">bed</mat-icon>
                                 {{house.nbbeds}}
                             </div>
-                            <div class="price" role="listitem" *ngIf="house">{{house.price}}€ / Nuit</div>
+                            <div class="price" role="listitem">{{house.price}}€ / Nuit</div>
                         </div>
                     </mat-list-item>
-                    
-                </mat-list>
-                
+                    <mat-chip-list class="container-chip-list"  aria-label="Activités">
+                        <mat-chip class="chip">{{house.listidActivities}}</mat-chip>
+                    </mat-chip-list>        
+                </mat-list>   
             </mat-card-content>
         </mat-card>
     </div>

@@ -46,6 +46,7 @@ import { MonCompteComponent } from './components/mon-compte/mon-compte.component
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { PageHouseDetailsComponent } from './pages/page-house-details/page-house-details.component';
 import { FormCompteComponent } from './components/form-compte/form-compte.component';
+import { BorderCardDirective } from './directives/border-card.directive';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { FormCompteComponent } from './components/form-compte/form-compte.compon
     ReservationsComponent,
     PageHouseDetailsComponent,
     FormCompteComponent,
+    BorderCardDirective,
   ],
   imports: [
     BrowserModule,
