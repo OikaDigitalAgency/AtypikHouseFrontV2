@@ -1,7 +1,5 @@
 .reservations-section{
-    margin: 1% 0% 0% 20%;
-    width: 65%;
-
+    width: auto;
 }
 
 h3{
@@ -16,4 +14,8 @@ img{
 
 mat-chip{
     float: right;
+}
+
+.container{
+    margin: 1% auto auto 0%;
 }

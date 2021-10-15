@@ -8,7 +8,7 @@ import { of } from 'rxjs'; // RxJS 6, à utiliser.
 
 
 
-const AUTH_API = 'https://localhost:8000';
+const AUTH_API = 'http://localhost:8000';
 
 const httpOptions = {
   headers: new HttpHeaders({
