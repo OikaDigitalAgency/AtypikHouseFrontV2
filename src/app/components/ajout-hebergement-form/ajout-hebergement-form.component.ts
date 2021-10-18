@@ -18,6 +18,9 @@ export interface Activité {
   styleUrls: ['./ajout-hebergement-form.component.scss']
 })
 export class AjoutHebergementFormComponent implements OnInit {
+
+  responseData1: any;
+  responseData2: any;
   // Variable to store shortLink from api response
   shortLink: string = "";
   loading: boolean = false; // Flag variable
@@ -78,7 +81,7 @@ export class AjoutHebergementFormComponent implements OnInit {
 
   
 
-  async onSave(formValues: IRegisterHouses, formValues2: IRegisterFile) {
+ /* async onSave(formValues: IRegisterHouses, formValues2: IRegisterFile) {
     // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
     if (this.form.valid) {
       
@@ -91,10 +94,22 @@ export class AjoutHebergementFormComponent implements OnInit {
         
         let res =  Promise.all([res1, res2]);
       }, (error) => { console.log(error) });
-    }
-    
+    }*/
+
+    onSave(formValues: IRegisterHouses,formValues2: IRegisterFile) {
+      // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
+      if (this.form.valid) {
+        let id = Number(this.route.snapshot.params.id);
+        this.housesService.fromMultipleSources(formValues, formValues2, id).subscribe((responseList) => {
+          this.responseData1 = responseList[0];
+          this.responseData2 = responseList[1];
+        }, (error) => { console.log(error) });
+      }
+    }    
   }
-}
+
+  
+
   
     
 
