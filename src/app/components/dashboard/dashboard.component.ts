@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-//import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,18 +8,14 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  /*id: string;*/
-
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    /*this.id = localStorage.getItem('token');*/
   }
 
- /* logout() {  
-    console.log('logout');  
-    this.authService.logout();  
-    this.router.navigate(['/login']);  
-  }  */
+  logout() {
+    sessionStorage.clear()
+    this.router.navigate(['/home']);
+  }
 
 }

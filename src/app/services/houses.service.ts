@@ -5,10 +5,12 @@ import { IRegisterHouses, IHousesEntity } from '../models/houses';
 import { IRegisterFile, IFileEntity } from '../models/file';
 import { catchError, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs'; // RxJS 6, à utiliser.
+import { forkJoin } from 'rxjs';
 
 
 
-const AUTH_API = 'http://localhost:8000';
+
+const AUTH_API = 'https://localhost:8000';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -39,7 +41,6 @@ export class HousesService {
 
   constructor(private readonly https: HttpClient) { }
 
-  
 
   /**
   * Permet d'enregistrer un nouveau house 
@@ -167,10 +168,43 @@ export class HousesService {
   registerHouseFile(registerValues: IRegisterFile, id: number): Observable<any> {
     const body: IFileEntity = {
       file: registerValues.file,
-      idUser: `\/api\/users\/${registerValues.idUser}`,
     };
 
     return this.https.post(`${AUTH_API}/api/houses/${id}/image`, body, httpOptions);
+  }
+
+/*test requete multiple registerHouse / registerFile*/
+  fromMultipleSources(registerValues: IRegisterHouses, 
+    registerValues2: IRegisterFile, id: number): Observable<any> {
+    const body: IHousesEntity = {
+      id: registerValues.id,
+      title: registerValues.title,
+      description: registerValues.description,
+      address: registerValues.address,
+      zipcode: registerValues.zipcode,
+      city: registerValues.city,
+      status: registerValues.status,
+      nbbeds: registerValues.nbbeds,
+      price: registerValues.price,
+      tax: registerValues.tax,
+      listidActivities: registerValues.listidActivities,
+      listIdEquipements: registerValues.listIdEquipements,
+      listidTags: registerValues.listidTags,
+      dateDebut: registerValues.dateDebut,
+      dateFin: registerValues.dateFin,
+      categorie: registerValues.categorie,
+      fileUrl: registerValues.fileUrl,
+      idUser: `\/api\/users\/${registerValues.idUser}`,
+    };
+
+    const body2: IFileEntity = {
+      file: registerValues2.file,
+    };
+
+    let response1 = this.https.post(`${AUTH_API}/api/houses`, body, httpOptions);
+    let response2 = this.https.post(`${AUTH_API}/api/houses/${id}/image`, body2, httpOptions);
+    
+    return forkJoin([response1, response2]);
   }
 
 }
