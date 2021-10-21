@@ -13,6 +13,7 @@ import { MonCompteComponent } from './components/mon-compte/mon-compte.component
 import { ReservationsComponent } from './components/reservations/reservations.component';
 import { PageHouseDetailsComponent } from './pages/page-house-details/page-house-details.component';
 import { FormCompteComponent } from './components/form-compte/form-compte.component';
+import { DashboardGuardGuard } from './dashboard-guard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'cgu', component: CguComponent },
   { path: 'hebergement', component: PageHousesComponent },
   { path: 'ajout-hebergement', component: PageAjoutHebergementComponent },
-  { path: 'dashboard', component: PageDashboardComponent },
+  { path: 'dashboard', component: PageDashboardComponent, canActivate: [DashboardGuardGuard] },
   { path: 'dashboard/mon-compte/:email', component: MonCompteComponent },
   { path: 'dashboard/reservations/:id', component: ReservationsComponent },
   { path: 'house/:id', component: PageHouseDetailsComponent },
@@ -36,4 +37,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
