@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { IRegisterHouses } from 'src/app/models/houses';
-import { IRegisterFile } from 'src/app/models/file';
 import { HousesService } from 'src/app/services/houses.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -78,35 +76,7 @@ export class AjoutHebergementFormComponent implements OnInit {
       this.activities.splice(index, 1);
     }
   }
-
-  
-
- /* async onSave(formValues: IRegisterHouses, formValues2: IRegisterFile) {
-    // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
-    if (this.form.valid) {
-      
-      const res1 = await this.housesService.registerHouse(formValues).subscribe((data) => {
-        
-      }, (error) => { console.log(error) });
-      
-      let id = Number(this.route.snapshot.params.id);
-      const res2 = await this.housesService.registerHouseFile(formValues2, id).subscribe((data) => {
-        
-        let res =  Promise.all([res1, res2]);
-      }, (error) => { console.log(error) });
-    }*/
-
-    onSave(formValues: IRegisterHouses,formValues2: IRegisterFile) {
-      // Si le form est valide : alors on doit démarrer le stcokage dans la base de données. *
-      if (this.form.valid) {
-        let id = Number(this.route.snapshot.params.id);
-        this.housesService.fromMultipleSources(formValues, formValues2, id).subscribe((responseList) => {
-          this.responseData1 = responseList[0];
-          this.responseData2 = responseList[1];
-        }, (error) => { console.log(error) });
-      }
-    }    
-  }
+}
 
   
 
