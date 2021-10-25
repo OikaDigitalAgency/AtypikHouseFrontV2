@@ -171,40 +171,6 @@ export class HousesService {
     };
 
     return this.https.post(`${AUTH_API}/api/houses/${id}/image`, body, httpOptions);
-  }
-
-/*test requete multiple registerHouse / registerFile*/
-  fromMultipleSources(registerValues: IRegisterHouses, 
-    registerValues2: IRegisterFile, id: number): Observable<any> {
-    const body: IHousesEntity = {
-      id: registerValues.id,
-      title: registerValues.title,
-      description: registerValues.description,
-      address: registerValues.address,
-      zipcode: registerValues.zipcode,
-      city: registerValues.city,
-      status: registerValues.status,
-      nbbeds: registerValues.nbbeds,
-      price: registerValues.price,
-      tax: registerValues.tax,
-      listidActivities: registerValues.listidActivities,
-      listIdEquipements: registerValues.listIdEquipements,
-      listidTags: registerValues.listidTags,
-      dateDebut: registerValues.dateDebut,
-      dateFin: registerValues.dateFin,
-      categorie: registerValues.categorie,
-      fileUrl: registerValues.fileUrl,
-      idUser: `\/api\/users\/${registerValues.idUser}`,
-    };
-
-    const body2: IFileEntity = {
-      file: registerValues2.file,
-    };
-
-    let response1 = this.https.post(`${AUTH_API}/api/houses`, body, httpOptions);
-    let response2 = this.https.post(`${AUTH_API}/api/houses/${id}/image`, body2, httpOptions);
-    
-    return forkJoin([response1, response2]);
-  }
+  }  
 
 }

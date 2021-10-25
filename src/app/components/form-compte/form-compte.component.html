@@ -67,6 +67,5 @@
         <mat-error *ngIf="form.hasError('confirmationPassword')">Les mots de passe doivent être identiques
         </mat-error>
       </mat-form-field>
-    <!--<button mat-raised-button type="button" (click)="onSave(form.value)"
-    [disabled]="!form.valid">Modifier</button>-->
+    <button mat-raised-button type="button" [disabled]="!form.valid">Modifier</button>
 </form>

@@ -25,7 +25,6 @@ export class AuthService {
     const body: ILoginEntity = {
       username: loginValues.email,
       password: loginValues.password,
-      id: loginValues.id,
     };
     return this.https.post(`${AUTH_API}/api/login`, body, httpOptions);
   }

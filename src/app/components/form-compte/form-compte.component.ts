@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-//import { IRegister } from 'src/app/models/register';
 import { Router,ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
