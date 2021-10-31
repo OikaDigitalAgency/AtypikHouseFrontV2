@@ -23,7 +23,6 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PubComponent } from './components/pub/pub.component';
 import { DevenirProprietaireComponent } from './pages/devenir-proprietaire/devenir-proprietaire.component';
 import { CguComponent } from './pages/cgu/cgu.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -60,7 +59,6 @@ import { BorderCardDirective } from './directives/border-card.directive';
     ContentContactPageComponent,
     LoginComponent,
     RegisterComponent,
-    PubComponent,
     DevenirProprietaireComponent,
     CguComponent,
     HomeComponent,
